@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CDG AI 提效申报 · 项目 1 · 食饮行业销售拓品确定性提效体系</title>
+<link href="https://fonts.font.im/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=Outfit:wght@400;500;600;700;800;900&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5efe6;--paper:#fffbf0;--ink:#1a1611;--sub:#3d342a;--mute:#6b5d4f;
+  --accent:#c2410c;--accent-bg:#fef3e7;
+  --green:#2d6a4f;--gold:#b8860b;--red:#9b2c2c;--blue:#1e40af;
+  --bd:#d4cab8;--bd-soft:#e8e0cd;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Noto Sans SC','Outfit',sans-serif;
+  font-size:15px;line-height:1.75;
+}
+.nav{
+  background:linear-gradient(135deg,#0a0a0a 0%,#3d2b1f 50%,#c2410c 130%);
+  color:#fff;
+  padding:14px 40px;
+  display:flex;align-items:center;gap:14px;
+  position:sticky;top:0;z-index:10;
+  flex-wrap:wrap;
+  box-shadow:0 4px 16px rgba(0,0,0,.15);
+}
+.nav-brand{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:13px;color:#ffd966;font-weight:700;
+  letter-spacing:.1em;
+  margin-right:auto;
+}
+.nav a{
+  color:#fff;text-decoration:none;
+  font-size:13px;font-weight:600;
+  padding:6px 14px;
+  border-radius:3px;
+  border:1px solid rgba(255,255,255,.2);
+}
+.nav a:hover{background:rgba(255,255,255,.12)}
+.nav a.active{background:#ffd966;color:#1a1611;border-color:#ffd966}
+
+.container{
+  max-width:920px;margin:30px auto;
+  background:var(--paper);
+  padding:60px 70px;
+  box-shadow:0 8px 32px rgba(0,0,0,.08);
+  border:1px solid var(--bd);
+}
+h1{
+  font-family:'Noto Serif SC',serif;
+  font-size:30px;font-weight:900;line-height:1.3;
+  margin:0 0 18px 0;color:var(--ink);
+  border-bottom:2px solid var(--ink);
+  padding-bottom:14px;
+}
+h2{
+  font-family:'Noto Serif SC',serif;
+  font-size:22px;font-weight:900;
+  color:var(--ink);
+  margin:38px 0 14px 0;
+  padding-bottom:8px;
+  border-bottom:1.5px solid var(--accent);
+}
+h3{
+  font-family:'Noto Serif SC',serif;
+  font-size:17px;font-weight:900;
+  color:var(--accent);
+  margin:24px 0 10px 0;
+}
+h4{
+  font-family:'Noto Serif SC',serif;
+  font-size:15px;font-weight:700;color:var(--sub);
+  margin:18px 0 8px 0;
+}
+p{margin:10px 0}
+strong{color:var(--ink);font-weight:700}
+em{font-style:normal;color:var(--accent);font-weight:700}
+table{
+  width:100%;border-collapse:collapse;
+  margin:14px 0;font-size:13.5px;
+  background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.04);
+}
+th{
+  background:#3d2b1f;color:#fff;
+  padding:10px 12px;text-align:left;
+  font-family:'Noto Serif SC',serif;
+  font-weight:900;font-size:13px;
+}
+td{
+  padding:9px 12px;
+  border-bottom:1px solid var(--bd-soft);
+  vertical-align:top;
+}
+tr:last-child td{border-bottom:none}
+ul,ol{padding-left:24px;margin:10px 0}
+li{margin:6px 0}
+blockquote{
+  border-left:4px solid var(--accent);
+  background:var(--accent-bg);
+  padding:14px 20px;
+  margin:14px 0;
+  color:var(--ink);
+}
+blockquote p{margin:6px 0}
+blockquote strong{color:var(--accent)}
+code{
+  background:#f0e8d8;
+  padding:2px 6px;border-radius:3px;
+  font-family:'Outfit',monospace;
+  font-size:13px;color:var(--accent);
+}
+pre{
+  background:#1a1611;color:#ffd966;
+  padding:16px 20px;border-radius:0;
+  overflow-x:auto;
+  font-family:'Outfit',monospace;
+  font-size:13px;line-height:1.7;
+}
+pre code{
+  background:transparent;color:#ffd966;
+  padding:0;
+}
+hr{
+  border:none;
+  border-top:1px solid var(--bd);
+  margin:32px 0;
+}
+a{color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)}
+a:hover{background:var(--accent);color:#fff}
+
+@media (max-width:960px){
+  .container{padding:36px 22px;margin:0}
+  .nav{padding:12px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-brand">⚡ CDG AI 提效申报 · 食饮行业运营组</span>
+  <a href="index.html">← 方法论 OnePage</a>
+  <a href="apply-1-category-insight.html" class="active">项目 1 · 品类选品</a>
+  <a href="apply-2-qinfendu.html">项目 2 · 勤奋度诊断</a>
+</nav>
+
+<div class="container">
+<h1>CDG AI 提效优秀实践 Q2 申报 · 项目 1</h1>
+<blockquote>
+<p><strong>食饮行业销售拓品确定性提效体系 —— 定赛道 / 铺声量 / 给方案 三层一体</strong></p>
+<p><strong>1 名行业运营独立完成「业务洞察 → 开品工具产品 → 客户案例」全链路</strong></p>
+</blockquote>
+<hr />
+<h2>01 项目名称</h2>
+<p><strong>食饮行业销售拓品确定性提效体系：定赛道 / 铺声量 / 给方案 三层一体的开品工具产品</strong></p>
+<hr />
+<h2>02 申报团队</h2>
+<p>CDG · 商品消费部 · 食品饮料中心 · 食品饮料运营组</p>
+<hr />
+<h2>03 申报团队类型</h2>
+<p>非产研团队（行业运营）</p>
+<hr />
+<h2>04 申报团队规模</h2>
+<p><strong>14 人</strong>（食品饮料运营组核心成员）</p>
+<hr />
+<h2>05 申报方向</h2>
+<p><strong>流程提效</strong> + <strong>创新探索</strong></p>
+<blockquote>
+<ul>
+<li>流程提效：单客户开品方案从 1 周 → 5 分钟（提效 168 倍），全员销售可批量产出资深级方案</li>
+<li>创新探索：1 名行业运营<strong>独立完成"业务洞察 → 产品设计 → 工程实现 → 客户落地"全链路</strong>，跨越产研边界做出已上线的开品工具产品</li>
+</ul>
+</blockquote>
+<hr />
+<h2>06 业务价值</h2>
+<h3>1. 痛点问题：从「给客户一张 Excel」到「给客户一份 Insight」</h3>
+<h4>🔴 商家端 · 想投但不敢投</h4>
+<p>食饮商家普遍想做视频号生意但<strong>不敢投资源</strong>——视频号没有像蝉妈妈、生意参谋这样的官方榜单工具，<strong>不知道把资源投在哪个品类才能赚钱</strong>。</p>
+<h4>🟠 销售端 · 想给但给不了</h4>
+<p>销售/运营想给商家一份"投这个品就对了"的确定性建议，但<strong>过去能给的只有 information，给不了 insight</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>痛点</th>
+<th>真实场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🐌 <strong>慢</strong></td>
+<td>单客户深度方案 1 周 / 资深策略师</td>
+<td>食饮中心 26000 ADQ 在投商家，全年人工只能服务几十个</td>
+</tr>
+<tr>
+<td>📊 <strong>弱</strong></td>
+<td>只能引用广告域局部数据</td>
+<td>一份几千条 SKU 的 Excel 榜单 = information，不是 insight，客户拿到也 have no clue</td>
+</tr>
+<tr>
+<td>🎲 <strong>赌</strong></td>
+<td>一人一分析，口径不一</td>
+<td>销售拿到产出后质量参差，无法保证全员同等深度交付</td>
+</tr>
+</tbody>
+</table>
+<h4>💡 双端卡死的本质</h4>
+<p><strong>商家"想投但不敢投" × 销售"想给但给不了"</strong>——两端在「<strong>SKU 级拓品确定性</strong>」上同时缺位。</p>
+<blockquote>
+<p>回到本质问题：<strong>销售的核心使命是"拓品拓客"——回答商家"在哪个维度拓品的确定性最高"。这件事在 AI 介入前，是一个靠资深运营经验、靠人工跑数、靠 1 周 1 客的密集型工作。</strong></p>
+</blockquote>
+<hr />
+<h3>2. 解决方案：双层产出 · 普惠 + 定制 · 三层一体</h3>
+<h4>一句话定义产品</h4>
+<p><strong>对所有商家产 Insight 级趋势榜单（普惠层）/ 对每个销售产 SKU 级开品方案（定制层）/ 中间用市场宣发把声量铺出去</strong>。</p>
+<h4>三层交付能力（一套体系 · 双向赋能）</h4>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>动作</th>
+<th>产出物</th>
+<th>给谁</th>
+<th>价值类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L1 · 定赛道</strong></td>
+<td>横向趋势 Insight 榜单</td>
+<td>双季品类趋势报告（粽香启夏 / 秋令食饮 / 冬令食饮）</td>
+<td><strong>全行业商家普惠</strong> + 全员销售</td>
+<td>商家<strong>敢投</strong>：知道赛道往哪走、什么人群什么诉求</td>
+</tr>
+<tr>
+<td><strong>L2 · 铺声量</strong></td>
+<td>行业宣发内容矩阵</td>
+<td>生意鹅短视频 + 食力鹅宝公众号系列文章（与市场部联合产出）</td>
+<td>市场部 + 销售拓客弹药</td>
+<td>行业声量放大、商家被教育、销售拓客增信</td>
+</tr>
+<tr>
+<td><strong>L3 · 给方案</strong></td>
+<td><strong>开品工具产品</strong>（5 分钟产出 SKU 级方案）</td>
+<td>「商家开品洞察提示词生成器」AI Native 工具 + 单客户定制开品 OnePage</td>
+<td><strong>销售对单客户定制交付</strong></td>
+<td>商家<strong>会投</strong>：拿到针对哪类人群、推哪些 SKU、用什么话术</td>
+</tr>
+</tbody>
+</table>
+<h4>双轮飞轮闭环（这套体系真正的杠杆）</h4>
+<pre><code>销售用工具产出 SKU 级方案 → 商家拿确定性，加大基建投入
+        ↑                              ↓
+ 销售拓客业绩 ↑ ← 视频号供给规模 ↑ ←━━━┘
+</code></pre>
+<h4>三件具体的 AI 落地事</h4>
+<p><strong>① 渠道独家数据底盘</strong>：自研抓取脚本，自动化获取视频号小店食饮品类全量商品榜单 / 时令爆品 / SKU 卖点。双季沉淀 <strong>20162 SKU</strong>（25Q3 10650 + 25Q4 9512），跨 13 个食饮子行业，<strong>补齐了视频号缺失的官方榜单工具空白</strong>。</p>
+<p><strong>② 一站式趋势 SKILL（产 Insight，不是 information）</strong>：把"经验性洞察"沉淀为标准化 SKILL：从 SKU → 11 维属性识别 → 5 大趋势 → 时令地图 → 可视化长图。<strong>不再发几千条 SKU 给客户，而是产出"35-49 岁妈妈/健身/控糖人群是 ecpm 洼地，对应低 GI 健康油机会大"这种可执行 Insight</strong>。</p>
+<p><strong>③ 开品工具产品 · AI Native（核心创新）</strong>：自研 HTML 提示词生成器（13 字段表单 + 实时拼接 + 一键复制），喂给 CodeBuddy / Claude / Codex → <strong>5 分钟生成单客户专属 SKU 级开品方案</strong>。工具不绑定数据源、数据不绑定工具——<strong>这不是 PPT 方案，是公网可访问、可协作迭代的真实产品</strong>。</p>
+<blockquote>
+<p>🔥 <strong>核心价值跳升</strong>：这套体系不只是个<strong>效率工具</strong>（让销售产出方案快了 168 倍），更是个<strong>增收工具</strong>——因为它直接告诉客户"怎么在 ecpm 洼地人群上把生意做大"。</p>
+</blockquote>
+<hr />
+<h3>3. 成果数据（量化业务收益 · 对比基线明确）</h3>
+<h4>A. 销售/运营对内提效（核心维度）</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>基线（AI 前 · 人工模式）</th>
+<th>AI 后（SKILL + 工具）</th>
+<th>提升</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单客户开品方案产出</strong></td>
+<td>资深策略师平均 5-7 个工作日</td>
+<td><strong>5 分钟</strong></td>
+<td><strong>≈ 168 倍</strong></td>
+</tr>
+<tr>
+<td><strong>数据覆盖</strong></td>
+<td>广告域局部数据</td>
+<td>视频号全域 20162 SKU（双季抓取）</td>
+<td>从 0 到 1</td>
+</tr>
+<tr>
+<td><strong>可服务客户广度</strong></td>
+<td>单团队全年深度服务几十个客户</td>
+<td>单销售/运营每日可批量产出</td>
+<td>10 倍 +</td>
+</tr>
+<tr>
+<td><strong>报告复用度</strong></td>
+<td>一次性产出，下次重做</td>
+<td>标准化 SKILL，5 分钟/次</td>
+<td>N → 1 边际成本</td>
+</tr>
+<tr>
+<td><strong>全员产出标准化</strong></td>
+<td>一人一分析、质量参差</td>
+<td>全员销售产出资深级方案</td>
+<td>质量上限拉齐</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>数据基线说明：以上对比基于<strong>食品饮料运营组 14 人</strong>在 2025 H2-2026 H1 的真实工作时长统计，单客户深度开品方案的"5-7 工作日"为运营组内 5 个真实历史 case 平均值。</p>
+</blockquote>
+<h4>B. 跨团队复用证据（评委关注点）</h4>
+<table>
+<thead>
+<tr>
+<th>证据</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>食品饮料一中心 fork 数</strong></td>
+<td><strong>50 / 65 名运营</strong>已 fork Prompt 工具到各自子赛道（截至 2026/06）</td>
+</tr>
+<tr>
+<td><strong>覆盖食饮子行业</strong></td>
+<td><strong>13 个</strong>全食饮子行业全部覆盖</td>
+</tr>
+<tr>
+<td><strong>潜在跨中心可推广</strong></td>
+<td>调整基准线后可推广到消电 / 日百 / 服饰美妆 3 个兄弟中心，潜在覆盖 200+ 销售运营</td>
+</tr>
+</tbody>
+</table>
+<h4>C. 双轮飞轮 · 双向价值（对外简略带过 · 符合评选指引）</h4>
+<p>第一个客户级落地案例<strong>「沙漠一号 · 虎坚果」</strong>已完成（含 8 款 SKU 拓品矩阵 + 3 主线营销组合 + 中老年送父母 P0 单品），商家拓品确定性显著提升，对应市场宣发内容（生意鹅短视频）已对外发布。</p>
+<hr />
+<h3>4. 受益范围 + 突破岗位边界</h3>
+<p><strong>直接受益（对内）</strong>：<br />
+- 食品饮料运营组 14 人核心使用<br />
+- 食品饮料一中心 50 人已 fork Prompt 工具到各自子赛道（<strong>跨团队复用证据</strong>）<br />
+- 覆盖 13 个食饮子行业全部销售/运营拓品场景</p>
+<p><strong>潜在受益</strong>：调整基准线 → 可推广至整个商品消费部（食饮 / 消电 / 日百 / 服饰美妆 4 个中心，潜在覆盖 200+ 销售运营）</p>
+<p><strong>间接服务规模</strong>：26000 个食饮 ADQ 在投商家可被销售批量服务</p>
+<h4>🌟 突破岗位边界（CDG 评选高加分项）</h4>
+<blockquote>
+<p>本人作为<strong>行业运营</strong>（非产品、非研发岗位），独立完成从「业务洞察 → 11 维属性识别规范设计 → 数据抓取脚本 → 报告生成 SKILL → AI Native 提示词工具 → GitHub Pages 部署 → 协作权限管理 → 客户案例落地」<strong>全链路</strong>。</p>
+<p><strong>这不是 PPT 方案，是公网可访问、可协作迭代、有真实用户在用的产品。</strong></p>
+<p><strong>行业运营 × 产品经理 × 工程实现——一个人完成了三个角色才能完成的事</strong>。这种"业务方直接把 SKU 级业务规则翻译成产品功能"的实践模式，省掉了过去"业务-产研"的中间层，是 AI 时代最值得被复制的"端到端推进者"画像。</p>
+</blockquote>
+<hr />
+<h2>07 技术深度（非产研团队 · 工具组合 + 流程设计）</h2>
+<h3>1. 主要使用的 AI 工具组合</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CodeBuddy / Claude / Codex</strong></td>
+<td>AI Native 单客户开品方案生成（接收 prompt → 联网读取行业基线 → 推理输出 OnePage）</td>
+</tr>
+<tr>
+<td><strong>Gemini API</strong></td>
+<td>数据抓取阶段的非结构化字段解析、属性识别辅助</td>
+</tr>
+<tr>
+<td><strong>GitHub + GitHub Pages</strong></td>
+<td>部署提示词工具 / 趋势报告 / 客户案例（公网可访问 + 多人协作）</td>
+</tr>
+<tr>
+<td><strong>Python + Playwright + Chrome Headless</strong></td>
+<td>数据抓取脚本 + 可视化长图自动渲染</td>
+</tr>
+<tr>
+<td><strong>AdataClaw</strong></td>
+<td>数据交叉验证、报告辅助生成</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 巧妙串联（业务流程深度结合）</h3>
+<h4>创新点 1 · 双层产出（普惠 + 定制）的金字塔结构</h4>
+<p>把销售拓品业务从单点工具升级为<strong>金字塔型交付体系</strong>：<br />
+- 底层 L1（<strong>定赛道</strong>）：覆盖广 → 普惠所有商家<br />
+- 中层 L2（<strong>铺声量</strong>）：杠杆放大 → 市场部+销售拓客弹药<br />
+- 上层 L3（<strong>给方案</strong>）：深度极高 → 销售对客定制</p>
+<p><strong>销售/运营在不同的客户阶段调用不同层级，资源分配最优化</strong>——头部客户用 L3 深度服务，腰尾部用 L1+L2 普惠教育。</p>
+<h4>创新点 2 · 混合架构（确定性 + 创造性）</h4>
+<pre><code>渠道独家数据（确定性）→ SKILL 规则化处理（确定性）→ AI Native 末端定制（创造性）
+   爬虫           11 维属性识别            CodeBuddy 推理
+</code></pre>
+<ul>
+<li><strong>底盘是封装的</strong>：销售对客需要确定性，数据抓取和报告生成必须可复现、不能产生幻觉</li>
+<li><strong>末端是 AI Native 的</strong>：单客户开品需要无穷多定制可能性，让 AI 接管推理实现 N=1 深度</li>
+<li>这种"底层确定性 + 末端创造性"的混合架构，是 ToB 场景 AI 应用最稳健的设计模式</li>
+</ul>
+<h4>创新点 3 · "运营做产品"的跨职能实践</h4>
+<p>整个开品工具产品<strong>没有任何产研团队介入</strong>——业务方直接：<br />
+- 把 SKU 级业务规则翻译成产品的 13 字段表单<br />
+- 把"针对哪类人群推哪类品"的逻辑翻译成 prompt 模板<br />
+- 把工具部署成公网可访问的产品（GitHub Pages）<br />
+- 配置协作者权限让团队多人迭代（COLLABORATE.md）</p>
+<p><strong>这种"运营直接做产品"的模式，是 AI 时代最值得在公司内推广的实践范式</strong>——省掉了"业务提需求 → 产研排期"的传统中间层。</p>
+<h4>创新点 4 · 11 维属性识别规范 v2（多品类去重）</h4>
+<p>把过去散点的属性抽取（口味/场景/人群/产地/原料散乱混用）抽象为 <strong>8 个核心维度 + 跨品类适配规则</strong>，覆盖食饮全部 11 个二级品类，含同义词归并 / 包含关系判定 / 颗粒度统一 / 互斥裁决等 4 类校验机制。<strong>这套规范是 SKILL 能跨品类复用的核心地基</strong>。</p>
+<h3>3. 运行稳定性</h3>
+<ul>
+<li><strong>数据抓取</strong>：双季已完成 2 次完整抓取（Q3 10650 SKU + Q4 9512 SKU），自动化稳定运行</li>
+<li><strong>AI Native 工具</strong>：已部署 GitHub Pages 公网可访问，已加协作者多人协作迭代</li>
+<li><strong>SKILL</strong>：在团队内已批量调用，输出质量稳定（标准化的报告骨架 + 个性化的洞察文案）</li>
+</ul>
+<hr />
+<h2>08 应用潜力</h2>
+<h3>1. 可复用性</h3>
+<p><strong>已实现的复用</strong>：<br />
+- ✅ 食品饮料一中心 50 人已 fork Prompt 工具到各自子赛道<br />
+- ✅ 13 个食饮子行业全覆盖<br />
+- ✅ 食品饮料运营组 14 人在用</p>
+<p><strong>潜在复用范围</strong>：<br />
+- <strong>横向跨中心</strong>：调整基准线监控范围 → 可复用到消电、日百、服饰美妆 3 个兄弟中心<br />
+- <strong>跨 BG 复用</strong>：核心方法论（<strong>渠道独家数据 + AI Native 末端定制 + 三层金字塔交付</strong>）适用于<strong>任何"有渠道数据 + 需要客户级方案"的销售/运营场景</strong><br />
+- <strong>复用所需条件</strong>：① 该渠道有可抓取的商品/榜单数据 ② 提供一份基线趋势报告 ③ 客户信息标准化输入字段（13 个）</p>
+<h3>2. 沉淀资产（标准化资产清单）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>资产</th>
+<th>链接/路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Native 开品工具产品</strong></td>
+<td>商家开品洞察提示词生成器</td>
+<td>https://winglee777.github.io/product-insight-prompt/</td>
+</tr>
+<tr>
+<td><strong>方法论 OnePage</strong></td>
+<td>食饮赛道品类拓品洞察体系（含双轮飞轮 + 三层交付）</td>
+<td>https://winglee777.github.io/food-category-insight/</td>
+</tr>
+<tr>
+<td><strong>L1 趋势 Insight #1</strong></td>
+<td>粽香启夏 · 端午食饮赛道爆品趋势</td>
+<td>站内长图</td>
+</tr>
+<tr>
+<td><strong>L1 趋势 Insight #2</strong></td>
+<td>秋令食饮 · 25Q3 品类趋势洞察（33 亿）</td>
+<td>https://winglee777.github.io/q3-category-trend/longimage.html</td>
+</tr>
+<tr>
+<td><strong>L1 趋势 Insight #3</strong></td>
+<td>冬令食饮 · 25Q4 品类趋势洞察（27.4 亿）</td>
+<td>https://winglee777.github.io/q4-category-trend/longimage.html</td>
+</tr>
+<tr>
+<td><strong>L3 客户级落地案例</strong></td>
+<td>沙漠一号·虎坚果开品 OnePage（8 款 SKU + 3 主线营销）</td>
+<td>站内 case 页</td>
+</tr>
+<tr>
+<td><strong>SOP 文档</strong></td>
+<td>关键属性识别规范 v2（11 品类 / 8 维度 / 跨品类适配规则）</td>
+<td>内部技能库</td>
+</tr>
+<tr>
+<td><strong>Prompt 模板</strong></td>
+<td>客户开品洞察提示词模板（13 字段标准化输入）</td>
+<td>工具页内嵌</td>
+</tr>
+<tr>
+<td><strong>协作 SOP</strong></td>
+<td>COLLABORATE.md（含 CodeBuddy 用户专属操作指南）</td>
+<td>GitHub 仓库内</td>
+</tr>
+</tbody>
+</table>
+<h3>3. 用户体验</h3>
+<ul>
+<li><strong>交互</strong>：13 字段表单 + chips 快捷选择 + 实时拼接 + 一键复制到剪贴板，<strong>零认知成本</strong></li>
+<li><strong>完整度</strong>：默认预填完整虎坚果案例，新用户打开就能看到效果再改成自己的信息</li>
+<li><strong>响应</strong>：从"用户填表"到"得到 OnePage"全流程 5 分钟内完成</li>
+<li><strong>跨工具兼容</strong>：CodeBuddy / Claude / Codex 任意 AI 工具都能跑</li>
+</ul>
+<h3>4. 过往分享 / 传播记录</h3>
+<ul>
+<li>✅ <strong>2026 食品饮料运营双周报</strong> 第 1.1 节正式分享</li>
+<li>✅ <strong>食饮中心广播站</strong>项目专题分享</li>
+<li>✅ 食品饮料一中心 50 人内部已 fork Prompt 工具到各自子赛道使用（<strong>跨团队复用证据</strong>）</li>
+</ul>
+<hr />
+<h2>真实业务闭环 case · 沙漠一号 × 虎坚果（推荐评委直接看演示）</h2>
+<p>完整跑通"<strong>输入 → 工具运转 → SKU 级方案 → 客户落地</strong>"四步闭环：</p>
+<h3>Step 1 · 输入（13 字段标准化）</h3>
+<p>品牌：沙漠一号；原料：虎坚果（油莎豆）；现有 SKU：坚果酱；可拓方向：油脂/粉剂/酱类...</p>
+<h3>Step 2 · 工具运转（5 分钟）</h3>
+<p>打开提示词生成器 → 填表 → 一键复制 prompt → 粘贴给 CodeBuddy → 联网读取秋令/冬令双季趋势报告 → 推理输出</p>
+<h3>Step 3 · 输出 SKU 级 Insight（"针对哪类人群、推哪类品、用什么话术"）</h3>
+<blockquote>
+<p><strong>观察</strong>：35-49 岁妈妈/健身/控糖人群是视频号 ecpm 洼地，竞争相对低、机会大</p>
+<p><strong>洞察</strong>：这群人最核心诉求是低 GI、控糖</p>
+<p><strong>建议</strong>：主推紫苏籽油、亚麻籽油等健康油品类；话术打"冷榨、0 添加、控糖友好"；P0 单品「中老年送父母礼盒」对位 Q4 滋补三件套 1.37 亿赛道</p>
+<p><strong>完整产出</strong>：8 款 SKU 拓品矩阵 + 3 主线营销组合（健康升级 / 复合年味 / 中老年送父母）</p>
+</blockquote>
+<h3>Step 4 · 客户落地</h3>
+<p>商家拓品方向明确化、对应的市场宣发内容（生意鹅短视频）已对外发布。</p>
+<blockquote>
+<p>🔥 <strong>关键 takeaway</strong>：这就是从"给客户一张几千 SKU 的 Excel"变成"告诉客户：针对哪类人群、推哪类 SKU、用什么话术"的真实跃迁——<strong>不只是效率工具，是增收工具</strong>。</p>
+</blockquote>
+<hr />
+<h2>当前局限与下一步规划</h2>
+<h3>当前局限</h3>
+<ul>
+<li>⚠️ 工具目前需要 BD 主动调用（粘贴趋势报告网址 + 填客户信息），<strong>未来希望做成 AdataClaw / EditClaw 上的销售作战平台原生 SKILL</strong>，进一步降低使用门槛</li>
+<li>⚠️ 跨 BG 推广时需要适配各 BG 的数据接口（短期内仍需 1-2 周对接成本）</li>
+<li>⚠️ AI Native 末端有"提示词依赖"问题——不同 LLM 输出质量略有差异，<strong>未来需要把 prompt 模板做成版本化的金标准</strong></li>
+</ul>
+<h3>下一步：从「对内 BD 工具」升级到「对客自助化」</h3>
+<p>推动该工具从"面向内部销售运营"转型为"<strong>直接面向商家</strong>"——让商家<strong>自助使用工具，无需行业内部中转</strong>。</p>
+<p>参考字节金融行业电商运营做法（数据脱敏 + 客户自建分析工具），下一阶段规划：<br />
+1. <strong>联动 ADP / Adata 团队</strong>完成数据脱敏 + 权限分级<br />
+2. <strong>从对内 AdataClaw 升级到对客 ADQClaw</strong><br />
+3. <strong>商家自助一键开品</strong>：商家自己输入品牌信息 → 直接拿到 SKU 级方案</p>
+<p>预计释放销售/运营在"客户级开品方案"环节的人力 10-30%，让运营专注更高价值的策略和经营动作，腰尾部商家通过自助工具闭环。</p>
+<hr />
+<h2>一句话总结</h2>
+<blockquote>
+<p><strong>AI 把"一个资深运营的开品经验"工程化为"全员销售的增收弹药"——对所有商家产 Insight 级趋势榜单（普惠层），对每个销售产 SKU 级开品工具产品（定制层）。1 名行业运营独立完成全链路，是 AI 时代"运营做产品"的端到端范式。</strong></p>
+</blockquote>
+</div>
+
+</body>
+</html>

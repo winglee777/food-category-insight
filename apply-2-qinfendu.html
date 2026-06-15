@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CDG AI 提效申报 · 项目 2 · 食饮商家投放勤奋度诊断</title>
+<link href="https://fonts.font.im/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=Outfit:wght@400;500;600;700;800;900&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5efe6;--paper:#fffbf0;--ink:#1a1611;--sub:#3d342a;--mute:#6b5d4f;
+  --accent:#c2410c;--accent-bg:#fef3e7;
+  --green:#2d6a4f;--gold:#b8860b;--red:#9b2c2c;--blue:#1e40af;
+  --bd:#d4cab8;--bd-soft:#e8e0cd;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Noto Sans SC','Outfit',sans-serif;
+  font-size:15px;line-height:1.75;
+}
+.nav{
+  background:linear-gradient(135deg,#0a0a0a 0%,#3d2b1f 50%,#c2410c 130%);
+  color:#fff;
+  padding:14px 40px;
+  display:flex;align-items:center;gap:14px;
+  position:sticky;top:0;z-index:10;
+  flex-wrap:wrap;
+  box-shadow:0 4px 16px rgba(0,0,0,.15);
+}
+.nav-brand{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:13px;color:#ffd966;font-weight:700;
+  letter-spacing:.1em;
+  margin-right:auto;
+}
+.nav a{
+  color:#fff;text-decoration:none;
+  font-size:13px;font-weight:600;
+  padding:6px 14px;
+  border-radius:3px;
+  border:1px solid rgba(255,255,255,.2);
+}
+.nav a:hover{background:rgba(255,255,255,.12)}
+.nav a.active{background:#ffd966;color:#1a1611;border-color:#ffd966}
+
+.container{
+  max-width:920px;margin:30px auto;
+  background:var(--paper);
+  padding:60px 70px;
+  box-shadow:0 8px 32px rgba(0,0,0,.08);
+  border:1px solid var(--bd);
+}
+h1{
+  font-family:'Noto Serif SC',serif;
+  font-size:30px;font-weight:900;line-height:1.3;
+  margin:0 0 18px 0;color:var(--ink);
+  border-bottom:2px solid var(--ink);
+  padding-bottom:14px;
+}
+h2{
+  font-family:'Noto Serif SC',serif;
+  font-size:22px;font-weight:900;
+  color:var(--ink);
+  margin:38px 0 14px 0;
+  padding-bottom:8px;
+  border-bottom:1.5px solid var(--accent);
+}
+h3{
+  font-family:'Noto Serif SC',serif;
+  font-size:17px;font-weight:900;
+  color:var(--accent);
+  margin:24px 0 10px 0;
+}
+h4{
+  font-family:'Noto Serif SC',serif;
+  font-size:15px;font-weight:700;color:var(--sub);
+  margin:18px 0 8px 0;
+}
+p{margin:10px 0}
+strong{color:var(--ink);font-weight:700}
+em{font-style:normal;color:var(--accent);font-weight:700}
+table{
+  width:100%;border-collapse:collapse;
+  margin:14px 0;font-size:13.5px;
+  background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.04);
+}
+th{
+  background:#3d2b1f;color:#fff;
+  padding:10px 12px;text-align:left;
+  font-family:'Noto Serif SC',serif;
+  font-weight:900;font-size:13px;
+}
+td{
+  padding:9px 12px;
+  border-bottom:1px solid var(--bd-soft);
+  vertical-align:top;
+}
+tr:last-child td{border-bottom:none}
+ul,ol{padding-left:24px;margin:10px 0}
+li{margin:6px 0}
+blockquote{
+  border-left:4px solid var(--accent);
+  background:var(--accent-bg);
+  padding:14px 20px;
+  margin:14px 0;
+  color:var(--ink);
+}
+blockquote p{margin:6px 0}
+blockquote strong{color:var(--accent)}
+code{
+  background:#f0e8d8;
+  padding:2px 6px;border-radius:3px;
+  font-family:'Outfit',monospace;
+  font-size:13px;color:var(--accent);
+}
+pre{
+  background:#1a1611;color:#ffd966;
+  padding:16px 20px;border-radius:0;
+  overflow-x:auto;
+  font-family:'Outfit',monospace;
+  font-size:13px;line-height:1.7;
+}
+pre code{
+  background:transparent;color:#ffd966;
+  padding:0;
+}
+hr{
+  border:none;
+  border-top:1px solid var(--bd);
+  margin:32px 0;
+}
+a{color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)}
+a:hover{background:var(--accent);color:#fff}
+
+@media (max-width:960px){
+  .container{padding:36px 22px;margin:0}
+  .nav{padding:12px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-brand">⚡ CDG AI 提效申报 · 食饮行业运营组</span>
+  <a href="index.html">← 方法论 OnePage</a>
+  <a href="apply-1-category-insight.html">项目 1 · 品类选品</a>
+  <a href="apply-2-qinfendu.html" class="active">项目 2 · 勤奋度诊断</a>
+</nav>
+
+<div class="container">
+<h1>CDG AI 提效优秀实践 Q2 申报 · 项目 2</h1>
+<blockquote>
+<p><strong>食饮商家投放勤奋度诊断 SKILL —— 把"销售运营盯客户基建"工程化为可批量、可追踪、销售也能用的 AI Agent</strong></p>
+<p><strong>从「对内提效 SKILL」演进到「对商家直接应用的经营平台能力」</strong></p>
+</blockquote>
+<hr />
+<h2>01 项目名称</h2>
+<p><strong>食饮商家投放勤奋度诊断 SKILL · 含 V2 Plus 自动追踪一体化版本 · 演进对客经营平台能力</strong></p>
+<hr />
+<h2>02 申报团队</h2>
+<p>CDG · 商品消费部 · 食品饮料中心 · 食品饮料运营组</p>
+<hr />
+<h2>03 申报团队类型</h2>
+<p>非产研团队（行业运营）</p>
+<hr />
+<h2>04 申报团队规模</h2>
+<p><strong>14 人</strong>（食品饮料运营组核心成员）</p>
+<hr />
+<h2>05 申报方向</h2>
+<p><strong>流程提效</strong> + <strong>质量提升</strong> + <strong>创新探索</strong></p>
+<blockquote>
+<ul>
+<li>流程提效：单客户基建诊断 2-3 小时 → 5-10 分钟（提效 18-36 倍），覆盖 1 万+ 食饮客户</li>
+<li>质量提升：把"销售凭经验口头催"升级为"销售拿着 L1/L2/L3 三层量化诊断报告跟客户谈"</li>
+<li>创新探索：V2 Plus 实现"诊断 + 自动追踪"一体化 + 规划演进为对客经营平台能力，<strong>让商家自助查询自己的勤奋度水位</strong></li>
+</ul>
+</blockquote>
+<hr />
+<h2>06 业务价值</h2>
+<h3>1. 痛点问题：商家投而不勤 × 销售盯而不动</h3>
+<blockquote>
+<p><strong>食饮行业的核心提收抓手是商家的基建供给（账户/项目/创意/智投占比）</strong>，但这件事在 AI 介入前，被双端的低效卡住。</p>
+</blockquote>
+<h4>🔴 商家端 · 投而不勤</h4>
+<p>随着 ADQ 迭代出竞价推广 / 智投 / 小店广告等多种投放工具，商家的基建供给（各种能力的覆盖应用）<strong>直接决定了 ROI 上限和 ECPM 竞争力</strong>。但商家普遍存在：<br />
+- 不知道自己基建水位 vs 行业中位的 gap<br />
+- 投完一段时间后凭感觉判断"还行/不行"，没有量化坐标<br />
+- 想优化但不知道从哪一个维度先动</p>
+<h4>🟠 销售/运营端 · 盯而不动</h4>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>痛点</th>
+<th>真实场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🐌 <strong>盯不动</strong></td>
+<td>商品消费部客户数以万计，运营只能深度盯头部，腰尾部基本靠销售口头催</td>
+<td>"你要补基建、要拿货补、要用智投" 说完客户也不知道差多少</td>
+</tr>
+<tr>
+<td>📋 <strong>没标准</strong></td>
+<td>一人一分析、口径不一，销售拿到运营产出后质量参差</td>
+<td>"勤奋度"是行业人人在喊但没人能量化定义的软指标</td>
+</tr>
+<tr>
+<td>⏰ <strong>复盘慢</strong></td>
+<td>等人工把数据拉齐、复盘出来，618 等节点窗口可能都过去了</td>
+<td>错过最佳干预窗口</td>
+</tr>
+<tr>
+<td>🌫 <strong>不闭环</strong></td>
+<td>即便给了诊断报告，客户落地了没有，运营和销售依然不掌握</td>
+<td>"建议常常石沉大海"</td>
+</tr>
+</tbody>
+</table>
+<h4>💡 双端卡死的本质</h4>
+<p><strong>商家"投而不勤" × 销售"盯而不动"</strong>——双端在「<strong>基建供给水位</strong>」上同时缺乏量化坐标。<strong>这正是销售运营场景里 AI 最值得攻克的"批量盯盘"战场</strong>。</p>
+<blockquote>
+<p>回到本质问题：<strong>销售/运营的核心使命就是推动客户做"该做的勤奋动作"——拿 A 类货补、补齐基建、优化投流结构、覆盖互补商品。这件事过去依靠人力密集型盯盘，跟不上海量客户规模。</strong></p>
+</blockquote>
+<hr />
+<h3>2. 解决方案：把"勤奋度"工程化为 SKILL · 从对内提效到对客平台能力</h3>
+<h4>一句话定义产品</h4>
+<p><strong>把销售/运营长期口头讨论的"勤奋度"软指标，翻译成 L1/L2/L3 三层量化模型 + 17 项数据并行诊断 + 自动追踪闭环的 AI Agent</strong>——上线 AdataClaw 市集，全员销售运营可直接调用，目前正在演进为对商家直接应用的经营平台能力。</p>
+<h4>三层勤奋度模型（核心创新）</h4>
+<blockquote>
+<p>数据基线：腾讯广告数仓 BI · 1 万+ 食饮客户 · 4 个自然周去重</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>命题</th>
+<th>量化指标</th>
+<th>跃迁目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🪨 L1 · 拼概率（卷基建）</strong></td>
+<td>基建拉满，破解唯一性限制</td>
+<td>账户数 / 项目广告数 / 素材数 / 日预算 4 项与行业中位对标</td>
+<td>各项达腰部水位（如日预算 0.07w → 4.92w，<strong>×73</strong>）</td>
+</tr>
+<tr>
+<td><strong>⛰️ L2 · 拼投放力（工具平权）</strong></td>
+<td>有效勤奋远胜重复堆砌，借助智投跃迁</td>
+<td><strong>⭐ 智投消耗占比（北极星）</strong></td>
+<td>行业当前中位 30-40% → <strong>跃迁目标 ≥70%</strong>（头部水位）</td>
+</tr>
+<tr>
+<td><strong>🏔️ L3 · 拼三力（围绕"人"打透）</strong></td>
+<td>卷三力，增强确定性</td>
+<td>商品力（BID）/ 内容力（CTR）/ 经营力（CVR）三力公式</td>
+<td>单链路打透 + 多生意结构组合</td>
+</tr>
+</tbody>
+</table>
+<p><strong>这是国内第一个把"勤奋度盯盘"做成 SKILL 的销售运营 Agent</strong>。</p>
+<h4>两阶段产品演进</h4>
+<p><strong>🟢 阶段 1（已落地）· 对内 AI 提效 SKILL</strong><br />
+- V1：「<strong>食饮商家投放勤奋度诊断</strong>」 已上线 AdataClaw Skill 市集（<strong>安装量 31 次</strong>）<br />
+- V2 Plus：「<strong>商家勤奋度诊断追踪 plus 版</strong>」 已上线 AdataClaw Skill 市集（<strong>安装量 5 次</strong>）<br />
+- 累计 36 次安装，覆盖食品饮料一中心 50 人 + 销售/运营双角色</p>
+<p><strong>🔵 阶段 2（推进中）· 对客经营平台能力</strong><br />
+- 推动 SKILL 从「<strong>对内 AdataClaw</strong>」演进到「<strong>对客 ADQClaw / 经营台 / 工作台</strong>」<br />
+- 让<strong>商家自助查询自己的勤奋度水位</strong>，主动补齐基建、优化结构<br />
+- 联动 ADP / Adata 团队完成数据脱敏 + 权限分级</p>
+<h4>三件具体的 AI 落地事</h4>
+<p><strong>① V1 · 一次性诊断 SKILL</strong><br />
+- 17 项数据一键并行（基线、消耗、账户结构、智投占比、三力指标）<br />
+- 单客户 / 多主体合并诊断（如山东持正、持正食品、持正电商三主体合并归口"林小生客户"）<br />
+- 输出：基建诊断 + 投放结构诊断 + 三力诊断 + 分阶段行动清单 + 时间线（<strong>直接可拿去客户沟通</strong>）</p>
+<p><strong>② V2 Plus · 诊断 + 自动追踪一体化（重大迭代）</strong><br />
+与销售老师们实战共创发现关键痛点——<strong>报告给到客户后，建议常常"石沉大海"</strong>。V2 解法：<br />
+- 先做一次完整诊断 → 自动创建定时任务<br />
+- 通过<strong>企业微信自动连推 3 期追踪日报</strong> → 监控客户实际落地表现<br />
+- 3 期后自动结束定时任务，<strong>实现"诊断—监控—闭环"的完整销售运营 Agent 范式</strong></p>
+<p><strong>③ 演进 Roadmap · 对客经营平台能力（推进中）</strong><br />
+- 当前痛点：随着 ADQ 迭代出竞价推广 / 智投 / 小店广告等工具，<strong>愈发需要一个面向商家的全局投放能力应用现状诊断</strong><br />
+- 演进方向：把对内 SKILL 翻译成对客经营平台能力，让商家自助使用<br />
+- 业务价值：商家能直接看到自己 L1/L2/L3 三层水位 + 跃迁路径 → <strong>从"销售推着商家做基建"变成"商家自驱补齐基建"</strong></p>
+<blockquote>
+<p>🔥 <strong>核心价值跳升</strong>：这套 SKILL 不只是个<strong>效率工具</strong>（让运营诊断快了 18-36 倍），更是个<strong>增收工具</strong>——客户基建补齐后真实跑出消耗增量。</p>
+</blockquote>
+<hr />
+<h3>3. 成果数据（量化业务收益 · 对比基线明确）</h3>
+<h4>A. 销售/运营对内提效（核心维度）</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>基线（AI 前）</th>
+<th>AI 后（SKILL）</th>
+<th>提升</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单客户诊断耗时</strong></td>
+<td>2-3 小时（人工拉数+清洗+分析）</td>
+<td><strong>5-10 分钟</strong></td>
+<td><strong>18-36 倍</strong></td>
+</tr>
+<tr>
+<td><strong>数据并行能力</strong></td>
+<td>销售/运营手动跑 3-5 维</td>
+<td><strong>17 项数据一键并行</strong></td>
+<td>维度扩展 3-5 倍</td>
+</tr>
+<tr>
+<td><strong>服务客户广度</strong></td>
+<td>头部 KA 才能享受深度诊断</td>
+<td><strong>腰尾部全覆盖</strong></td>
+<td>从精英服务变日常服务</td>
+</tr>
+<tr>
+<td><strong>复盘速度</strong></td>
+<td>4-5 小时</td>
+<td><strong>10 分钟</strong></td>
+<td><strong>24-30 倍</strong></td>
+</tr>
+<tr>
+<td><strong>诊断后追踪</strong></td>
+<td>报告石沉大海，无监控</td>
+<td>V2 Plus 自动连推 3 期日报</td>
+<td>从 0 到 1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>数据基线说明：基线"2-3 小时"基于运营组 5 个真实历史 case 平均值；样本数据"1 万+ 食饮客户"为腾讯广告数仓 BI 4 周去重统计。</p>
+</blockquote>
+<h4>B. AdataClaw 市集装机数据（评委可验证）</h4>
+<table>
+<thead>
+<tr>
+<th>SKILL 名称</th>
+<th>创建人</th>
+<th>安装量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>食饮商家投放勤奋度诊断</strong>（V1）</td>
+<td>wingsdli</td>
+<td><strong>31 次</strong></td>
+</tr>
+<tr>
+<td><strong>商家勤奋度诊断追踪 plus 版</strong>（V2）</td>
+<td>wingsdli</td>
+<td><strong>5 次</strong></td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td>-</td>
+<td><strong>36 次</strong></td>
+</tr>
+</tbody>
+</table>
+<h4>C. 真实客户增长 case（对外简略 · 符合评选指引）</h4>
+<table>
+<thead>
+<tr>
+<th>客户</th>
+<th>AI 介入前</th>
+<th>AI 介入后</th>
+<th>增长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>空刻意面</strong>（5/29 V1 诊断）</td>
+<td>日耗 1.5w</td>
+<td>日耗 9w</td>
+<td><strong>6 倍</strong></td>
+</tr>
+<tr>
+<td><strong>锋味派</strong>（V2 Plus 追踪 · 第 2 期监控）</td>
+<td>L1 日耗下滑</td>
+<td>日均消耗 ↑264.3%</td>
+<td><strong>3.6 倍</strong></td>
+</tr>
+</tbody>
+</table>
+<p>锋味派 V2 Plus 第 2 期追踪日报已自动跑出明确诊断信号：<br />
+- ✅ L1 日耗下滑问题已解决（日均消耗 ↑264.3%）<br />
+- ✅ L2 非智投 1:1 复制已达标（占比 40%，目标 ≥30%）<br />
+- 🟡 L2 小店广告有改善但差距仍大（占比 3%，目标 30%）<br />
+- 🔴 L3 经营力 CVR 持续恶化（大场 -29.4%）</p>
+<p><strong>项目累计</strong>：已跑 <strong>数十份</strong>对客真实诊断报告，客户感受到"定制化复盘"的服务温度。</p>
+<h4>D. 销售一线反馈（来自食饮中心 2026 运营双周报）</h4>
+<blockquote>
+<p>"<strong>高效覆盖腰尾客户</strong>：过去中小客户运营没精力服务，销售不便催。现在 10 分钟一份报告，固定模板，销售轻松 get"</p>
+<p>"<strong>快速洞察头部基建基础问题</strong>：通过勤奋度诊断，销售可发现存客户在基建问题（80%+ 客户存在基建不足、智投占比低），运营人力可以放在"基建足够，消耗仍未达预期"的客户"</p>
+<p>"<strong>真实业务结果</strong>：自动勤奋度诊断面世后，已跑过数十份报告，商家一方面能够感受到'定制化复盘'的温暖，且最终有消耗增量收获 case"</p>
+</blockquote>
+<hr />
+<h3>4. 受益范围 + 突破岗位边界</h3>
+<p><strong>直接受益（对内）</strong>：<br />
+- 食品饮料运营组 14 人核心使用<br />
+- AdataClaw 市集已被安装 36 次（V1 31 + V2 5），覆盖食饮一中心 50 人<br />
+- 销售也能直接调用（不再依赖运营），覆盖运营 + 销售双角色</p>
+<p><strong>潜在受益</strong>：<br />
+- 调整基准线 → 可推广到整个商品消费部（食饮 / 消电 / 日百 / 服饰美妆 4 个中心，潜在覆盖 200+ 销售运营 + 数万腰尾部商家）<br />
+- 对客平台能力上线后 → 食饮全行业 1 万+ 商家可自助使用</p>
+<h4>🌟 突破岗位边界（CDG 评选高加分项）</h4>
+<blockquote>
+<p>本人作为<strong>行业运营</strong>（非产品、非研发岗位），独立完成从「业务洞察 → 勤奋度三层模型设计（L1/L2/L3） → SKILL 工程化（17 项数据并行） → AdataClaw 市集上传 → 销售实战共创 → V2 Plus 自动追踪迭代 → 对客平台能力规划」<strong>全链路</strong>。</p>
+<p><strong>更关键的是"实战共创"环节</strong>——和食饮中心一线销售深度共创，把销售反馈的"诊断完石沉大海"痛点直接迭代进 V2 Plus 产品。<strong>这种"业务方=产品经理=工程师=客户共创者"的多角色合一，是 AI 时代最有效的迭代闭环</strong>。</p>
+</blockquote>
+<hr />
+<h2>07 技术深度（非产研团队 · 工具组合 + 流程设计）</h2>
+<h3>1. 主要使用的 AI 工具组合</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AdataClaw + Skill 市集</strong></td>
+<td>SKILL 主载体：数据接入 + 推理引擎 + 用户分发</td>
+</tr>
+<tr>
+<td><strong>企业微信机器人</strong></td>
+<td>V2 Plus 自动追踪日报推送通道</td>
+</tr>
+<tr>
+<td><strong>AdataClaw 定时任务</strong></td>
+<td>V2 Plus 监控调度引擎，3 期后自动结束</td>
+</tr>
+<tr>
+<td><strong>HTML 模板引擎</strong></td>
+<td>输出客户可直接看的结构化诊断报告（4 大模块）</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 巧妙串联（业务流程深度结合）</h3>
+<h4>创新点 1 · 把"勤奋度"这个软指标工程化（行业首创）</h4>
+<p>行业里所有人都在喊"盯客户勤奋度"，但<strong>没有人把它变成可执行的 SKILL</strong>。本项目把销售/运营长期口头讨论的"勤奋度"翻译为：</p>
+<pre><code>L1 拼概率（基建中位数对照） → L2 拼投放力（智投占比 ≥70%） → L3 拼三力（BID/CTR/CVR）
+   4 项基建指标 vs 中位        北极星 = 智投消耗占比         围绕&quot;人&quot;的三力公式
+</code></pre>
+<p><strong>判定逻辑严谨可量化</strong>：基于 1 万+ 食饮客户 4 周自然周去重的中位数数据，给出每个层级的具体跃迁目标（如 L1→L2 日预算需跃迁 73 倍）。<strong>这是国内第一个把"勤奋度盯盘"做成 SKILL 的销售运营 Agent</strong>。</p>
+<h4>创新点 2 · "诊断 + 追踪" 一体化（V2 Plus）</h4>
+<p>行业里大量 AI 诊断工具止步于"出一份报告"，但本项目认知到——<strong>诊断不是终点，落地才是</strong>。V2 Plus 通过定时任务 + 企微连推，把单次诊断升级为"主动触达式监控"：</p>
+<pre><code>T+0：完整诊断（17 项数据 + L1/L2/L3 三层模型）
+   ↓
+T+3、T+7、T+14：自动企微推送追踪日报（含核心进展 + 状态符号 ✅/🟡/🔴）
+   ↓
+3 期后自动结束定时任务
+</code></pre>
+<p>这种"诊断 → 监控 → 闭环"的设计模式，是销售运营场景的<strong>最佳实践范式</strong>——直接复用到任何 ToB 场景的客户跟进流程。</p>
+<h4>创新点 3 · 销售也能用的"低门槛诊断"</h4>
+<p>把运营经验 + 客观业务知识（指标口径 / ROI 出价逻辑 / 链路定义 / 归因边界）固化为 Rule，让<strong>销售（不只是运营）也能产出运营级诊断</strong>。这直接解决了"销售只会口头催"的痛点——销售不再空口讲，能拿着结构化报告跟客户谈。</p>
+<h4>创新点 4 · 演进路径：从对内 SKILL 到对客经营平台</h4>
+<p><strong>这是评委最值得关注的点</strong>——本项目不止步于"对内提效"，而是规划了清晰的演进路径：</p>
+<pre><code>阶段 1（已落地）          阶段 2（推进中）
+对内 AdataClaw SKILL  →   对客 ADQClaw / 经营台 / 工作台
+运营/销售用                商家自助查
+36 次安装                  食饮全行业 1 万+ 商家
+</code></pre>
+<p><strong>这种"对内验证 → 对客闭环"的双阶段演进</strong>，对 CDG 评选语境特别契合——既符合"AI 提效"主题，又有清晰的对外业务延伸价值。</p>
+<h3>3. 运行稳定性</h3>
+<ul>
+<li>AdataClaw 市集 V1（31 次）+ V2 Plus（5 次）已上线，稳定运行</li>
+<li>V2 Plus 自动追踪：锋味派 case 已稳定跑完 2 期日报，第 3 期 2026-06-13 自动触发</li>
+<li>已批量产出<strong>数十份</strong>对客真实诊断报告，质量稳定可交付</li>
+</ul>
+<hr />
+<h2>08 应用潜力</h2>
+<h3>1. 可复用性</h3>
+<p><strong>已实现的复用</strong>：<br />
+- ✅ AdataClaw Skill 市集已被 <strong>36 次安装</strong>（V1 31 + V2 5），跨食饮一中心多个团队<br />
+- ✅ 销售也能直接调用（不再依赖运营），覆盖<strong>运营 + 销售双角色</strong></p>
+<p><strong>潜在复用范围</strong>：<br />
+- <strong>横向跨行业</strong>：调整 L1/L2/L3 基准线 → 可复用到消电、日百、服饰美妆等任何"投放勤奋度"是核心命题的行业（<strong>该命题在所有 ADQ 投放场景普遍存在</strong>）<br />
+- <strong>跨 BG 复用</strong>：方法论（三层诊断模型 + 诊断追踪一体化）适用于任何"有海量客户 + 需要批量盯盘"的销售运营场景<br />
+- <strong>复用所需条件</strong>：① 接入 AdataClaw 即可（无需重新开发） ② 调整 L1/L2/L3 基准线适配本行业 ③ 配置企微推送通道</p>
+<h3>2. 沉淀资产（标准化资产清单）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>资产</th>
+<th>链接/位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SKILL（V1）</strong></td>
+<td>食饮商家投放勤奋度诊断（安装量 31）</td>
+<td>AdataClaw Skill 市集（创建人 wingsdli）</td>
+</tr>
+<tr>
+<td><strong>SKILL（V2 Plus）</strong></td>
+<td>商家勤奋度诊断追踪 plus 版（安装量 5）</td>
+<td>AdataClaw Skill 市集（创建人 wingsdli）</td>
+</tr>
+<tr>
+<td><strong>业务模型</strong></td>
+<td>三层勤奋度量化模型（L1 拼概率 / L2 拼投放力 / L3 拼三力）</td>
+<td>https://xiaofangli055-byte.github.io/food/qinfendu/</td>
+</tr>
+<tr>
+<td><strong>对客报告模板</strong></td>
+<td>4 大模块（基建诊断 / 投放结构诊断 / 三力诊断 / 可执行行动清单）</td>
+<td>SKILL 默认输出</td>
+</tr>
+<tr>
+<td><strong>真实客户案例</strong></td>
+<td>空刻意面 1.5w → 9w（6 倍）+ 锋味派 ↑264.3%</td>
+<td>内部双周报已记录</td>
+</tr>
+<tr>
+<td><strong>方法论 OnePage</strong></td>
+<td>食品饮料赛道品类拓品洞察体系</td>
+<td>https://winglee777.github.io/food-category-insight/</td>
+</tr>
+<tr>
+<td><strong>培训材料</strong></td>
+<td>食力增长特训营 · 行业培训专题</td>
+<td>腾讯营销学堂</td>
+</tr>
+</tbody>
+</table>
+<h3>3. 用户体验</h3>
+<ul>
+<li><strong>安装路径</strong>：打开 AdataClaw → Skill 市集 → 搜索"勤奋度诊断" → 一键安装</li>
+<li><strong>使用方式</strong>：</li>
+<li>单客户：直接说"做勤奋度诊断，客户名称：XXX"</li>
+<li>多主体合并：支持多个主体合并诊断（如同一客户旗下 3 个公司主体合并归口）</li>
+<li><strong>输出</strong>：5-10 分钟内拿到完整对客分析报告，含基建达标诊断 + 投放结构诊断 + 三力诊断 + 可执行行动清单 + 时间线</li>
+<li><strong>追踪</strong>（V2）：诊断完成自动建定时任务，企微连推 3 期日报，无需人工干预</li>
+</ul>
+<h3>4. 过往分享 / 传播记录</h3>
+<ul>
+<li>✅ <strong>2026 食品饮料运营双周报</strong> 第 1.3 节正式分享（《食饮商家投放勤奋度诊断》专章）</li>
+<li>✅ <strong>AdataClaw Skill 市集官方上架</strong>（市集贡献者：wingsdli）</li>
+<li>✅ <strong>食力增长特训营</strong>行业培训专题（腾讯营销平台-运营培训-营销培训 / 腾讯营销学堂）</li>
+<li>✅ <strong>销售一线实战反馈</strong>已记录在内部双周报（业务负责人 EV 正面背书）</li>
+</ul>
+<hr />
+<h2>真实业务闭环 case · 锋味派 V2 Plus 自动追踪（推荐评委直接看演示）</h2>
+<p>完整跑通"<strong>诊断 → 追踪 → 进度 → 自动闭环</strong>"四步：</p>
+<h3>Step 1 · 完整诊断（V2 Plus 上线一键发起）</h3>
+<p>诊断窗口：2026-05-07 至 2026-06-05（30 天对比基线）</p>
+<h3>Step 2 · 自动建任务 + 企微连推</h3>
+<p>诊断完成 → 系统自动创建定时任务 → 企业微信连推 3 期追踪日报</p>
+<h3>Step 3 · 第 2 期监控日报（自动到达）</h3>
+<p>监控窗口：2026-06-06 至 2026-06-09（4 天对比 30 天基线）</p>
+<p><strong>核心进展</strong>：<br />
+- ✅ L1 日耗下滑问题已解决：日均消耗 <strong>↑264.3%</strong><br />
+- ✅ L2 非智投 1:1 复制已达标：非智投广告数占比 40%（目标 ≥30%）<br />
+- 🟡 L2 小店广告有改善但差距仍大：占比 3.0%（目标 30%）<br />
+- 🟡 L3 内容力略有回落：视频号外占比 34.2%（第 1 期 37.2%）<br />
+- 🔴 L3 经营力 CVR 持续恶化：大场 -29.4%，非大场 -16.4%</p>
+<h3>Step 4 · 自动闭环</h3>
+<p>第 3 期监控（2026-06-13）完成后自动删除定时任务，整个跟进闭环 100% 由 AI 完成，<strong>销售/运营全程无人工介入</strong>。</p>
+<blockquote>
+<p>🔥 <strong>关键 takeaway</strong>：这就是从"运营口头催客户、做没做不知道、复盘慢"到"AI 摆赛道批量盘勤奋度，谁勤奋谁偷懒一键看清，节点窗口内自动跟进闭环"的真实跃迁——<strong>不只是效率工具，是确定性闭环工具</strong>。</p>
+</blockquote>
+<hr />
+<h2>当前局限与下一步规划</h2>
+<h3>当前局限</h3>
+<ul>
+<li>⚠️ 工具目前<strong>仅限 AdataClaw 市集对内调用</strong>，商家无法自助查询自己的勤奋度水位</li>
+<li>⚠️ V2 Plus 的 3 期追踪频次相对固定，未来希望支持运营按客户阶段灵活配置</li>
+<li>⚠️ 跨行业适配需要 1-2 周对 L1/L2/L3 基线进行调参</li>
+</ul>
+<h3>下一步：从「对内 SKILL」到「对客经营平台能力」（重点推进）</h3>
+<blockquote>
+<p>这是项目最值得 BG 关注的演进方向。</p>
+</blockquote>
+<p>随着 ADQ 迭代出各类投放工具（竞价推广 / 智投 / 小店广告），<strong>行业推动提收的一个重要抓手是商家的基建供给（各种能力的覆盖应用）</strong>，所以愈发需要一个面向商家的高维度的全局投放能力应用现状诊断，推进投放基建优化。</p>
+<p>食品饮料行业率先通过 AdataClaw 实现了面向内部的快速诊断 SKILL，<strong>行业应用和商家的采纳率都非常高</strong>。下一步规划：</p>
+<ol>
+<li><strong>联动 ADP / Adata 团队</strong>完成数据脱敏 + 权限分级</li>
+<li><strong>从对内 AdataClaw 升级到对客 ADQClaw / 经营台 / 工作台</strong></li>
+<li><strong>商家自助一键诊断</strong>：商家自己输入账户 → 直接拿到 L1/L2/L3 三层勤奋度水位 + 跃迁路径 + 自动追踪进度</li>
+</ol>
+<p>预计释放销售/运营在"客户级勤奋度诊断"环节的人力 10-30%，让运营聚焦"基建已达标但仍未起量"的高价值客户深度策略，<strong>腰尾部商家通过自助工具实现自驱补齐基建</strong>。</p>
+<hr />
+<h2>一句话总结</h2>
+<blockquote>
+<p><strong>国内第一个把"销售运营盯客户勤奋度"工程化为可批量、可追踪、销售也能用的 AI Agent——基于 1 万+ 食饮客户构建 L1/L2/L3 三层量化模型，已上线 AdataClaw Skill 市集 36 次安装，跑出空刻意面 6 倍消耗增长 + 锋味派 ↑264.3% 的真实业务 case，正在演进为对商家直接应用的经营平台能力。</strong></p>
+</blockquote>
+</div>
+
+</body>
+</html>
