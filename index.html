@@ -168,6 +168,88 @@ body{
   background:rgba(155,44,44,.08);
   padding:1px 4px;border-radius:2px;
 }
+
+/* 双向飞轮 banner */
+.flywheel{
+  background:linear-gradient(90deg,#0a0a0a 0%,#3d2b1f 50%,#c2410c 130%);
+  color:#fff;
+  padding:14px 24px;
+  margin-bottom:18px;
+  border-radius:0;
+  box-shadow:var(--shadow);
+  display:flex;align-items:center;gap:18px;
+  position:relative;overflow:hidden;
+}
+.flywheel::before{
+  content:'FLYWHEEL';
+  position:absolute;right:-10px;top:-8px;
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:48px;font-weight:900;
+  color:rgba(255,255,255,.05);line-height:1;letter-spacing:.05em;
+}
+.flywheel .fw-label{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:11px;font-weight:700;
+  color:#ffd966;letter-spacing:.15em;
+  text-transform:uppercase;flex-shrink:0;
+  position:relative;z-index:1;
+}
+.flywheel .fw-chain{
+  display:flex;align-items:center;gap:6px;
+  font-family:'Noto Serif SC',serif;
+  font-size:13px;font-weight:700;
+  flex-wrap:wrap;
+  position:relative;z-index:1;
+}
+.flywheel .fw-step{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,217,102,.3);
+  padding:5px 10px;
+  border-radius:3px;
+  white-space:nowrap;
+}
+.flywheel .fw-step b{color:#ffd966}
+.flywheel .fw-arrow{
+  font-family:'Fraunces',serif;
+  color:#ffd966;font-weight:900;font-size:14px;
+}
+
+/* 双轮痛点（外因 × 内因）*/
+.painpoint.dual{
+  background:#fff;
+  border:none;
+  padding:0;
+  margin-bottom:8px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.dual-row{
+  display:flex;align-items:stretch;gap:0;
+  background:linear-gradient(90deg,#fbecea 0%,#fff 100%);
+  border:2px solid var(--red);
+  border-radius:4px;
+  overflow:hidden;
+}
+.dual-tag{
+  background:var(--red);color:#fff;
+  padding:8px 10px;
+  font-family:'Noto Serif SC',serif;
+  font-size:12px;font-weight:900;
+  letter-spacing:.05em;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;width:50px;
+  writing-mode:horizontal-tb;
+}
+.dual-text{
+  padding:8px 12px;
+  font-size:12.5px;font-weight:600;
+  line-height:1.55;
+  color:var(--ink);
+}
+.dual-text b{
+  color:var(--red);font-weight:900;
+  background:rgba(155,44,44,.08);
+  padding:1px 4px;border-radius:2px;
+}
 .painpoint-note{
   font-size:11px;color:var(--mute);
   line-height:1.6;
@@ -187,7 +269,8 @@ body{
 .what-step .stn{
   font-family:'Outfit',sans-serif;
   font-weight:900;color:var(--green);
-  font-size:13px;flex-shrink:0;width:18px;
+  font-size:13px;flex-shrink:0;width:32px;
+  letter-spacing:-.02em;
 }
 .what-step .stt{
   font-size:11.5px;color:var(--sub);line-height:1.55;
@@ -579,40 +662,61 @@ body{
 <!-- CONTEXT（左 WHY · 右 WHAT）-->
 <div class="context">
 
-  <!-- 左 · WHY -->
+  <!-- 左 · WHY · 双轮痛点 -->
   <div class="ctx-card why">
-    <div class="lbl">📍 WHY · 项目背景</div>
-    <h3>商家想做视频号生意，但<span class="pop">不敢投资源</span></h3>
-    <div class="painpoint">
-      <span class="quote">"</span>视频号<b>没有官方榜单工具</b>，不知道把资源投在哪个品类才能更快拿到效益<span class="quote">"</span>
+    <div class="lbl">📍 WHY · 拓品拓客的双重困境</div>
+    <h3><span class="pop">商家不敢投</span> × <span class="pop">销售拓不动</span></h3>
+    <div class="painpoint dual">
+      <div class="dual-row">
+        <div class="dual-tag">外因</div>
+        <div class="dual-text"><b>商家不敢投</b>：视频号没有像蝉妈妈/生意参谋这样的官方榜单工具，商家<b>不知道把资源投在哪个品类</b>才能拿到效益</div>
+      </div>
+      <div class="dual-row">
+        <div class="dual-tag">内因</div>
+        <div class="dual-text"><b>销售拓不动</b>：行业销售给商家拓品方案，<b>周期长（1 周/客）/ 数据弱（只有广告域）/ 缺标准（一人一分析）</b>，腰尾部 26000 商家全年只能服务几十个</div>
+      </div>
     </div>
     <div class="painpoint-note">
-      —— 抖音有蝉妈妈，淘宝有生意参谋，<b>视频号缺一个对商家可参考的全量商品榜单工具</b>。
-      历史业务多基于广告数据，对商家选品决策<b>参考性弱</b>。<br>
-      确定性焦虑直接卡住商家投入意愿——只有给出<b>明确的品类机会方向</b>，才能撬动商家把<b>更多有价值的商品</b>引入视频号。
+      —— 双端在「<b>SKU 级拓品确定性</b>」上同时缺位：商家想投但不敢投，销售想给方案但给不了。
+      这正是销售拓品业务最值得被 AI 攻克的核心战场。
     </div>
   </div>
 
-  <!-- 右 · WHAT -->
+  <!-- 右 · WHAT · 三层一体 -->
   <div class="ctx-card what">
-    <div class="lbl">🎯 WHAT · 我们怎么做</div>
-    <h3>「<span class="pop">拓品拓客</span>」专项<br>用渠道独家数据，给确定性方向</h3>
+    <div class="lbl">🎯 WHAT · 一套体系 · 双向赋能</div>
+    <h3>「<span class="pop">拓品拓客</span>」三层交付能力<br>同时解锁销售内部 + 商家外部</h3>
     <div class="whats">
       <div class="what-step">
-        <div class="stn">①</div>
-        <div class="stt"><span class="acc">渠道独家</span>基于<b>视频号小店渠道</b>独有数据，做深度品类洞察</div>
+        <div class="stn">L1</div>
+        <div class="stt"><span class="acc">横向趋势</span>双季品类趋势报告 → 全员销售拿到统一基准 + 商家看清赛道走向</div>
       </div>
       <div class="what-step">
-        <div class="stn">②</div>
-        <div class="stt"><span class="acc">跟品</span>商家直接<b>跟进榜单里已验证的爆品</b>，降低决策成本</div>
+        <div class="stn">L2</div>
+        <div class="stt"><span class="acc">市场宣发</span>趋势素材供市场部做行业宣发 → 销售拓客弹药 + 商家被教育</div>
       </div>
       <div class="what-step">
-        <div class="stn">③</div>
-        <div class="stt"><span class="acc">开品</span>商家针对视频号渠道<b>单独定制开品</b>，差异化竞争</div>
+        <div class="stn">L3</div>
+        <div class="stt"><span class="acc">SKU 级开品</span>面状榜单 + 点状 5 分钟单客户开品 → 销售提效 168 倍 + 商家拿确定性</div>
       </div>
     </div>
   </div>
 
+</div>
+
+<!-- FLYWHEEL · 双向飞轮 -->
+<div class="flywheel">
+  <div class="fw-label">⚙ 双向飞轮 · FLYWHEEL</div>
+  <div class="fw-chain">
+    <div class="fw-step">销售用工具产出 SKU 级方案</div>
+    <span class="fw-arrow">→</span>
+    <div class="fw-step">商家拿<b>确定性</b>，加大基建投入</div>
+    <span class="fw-arrow">→</span>
+    <div class="fw-step">视频号<b>供给规模 ↑</b></div>
+    <span class="fw-arrow">→</span>
+    <div class="fw-step">销售拓客业绩 ↑</div>
+    <span class="fw-arrow">↻</span>
+  </div>
 </div>
 
 <!-- THESIS（核心思考·横向）-->
