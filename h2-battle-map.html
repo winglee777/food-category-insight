@@ -3,17 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>商品力 · 思维逻辑图</title>
-<link rel="stylesheet" href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Fraunces:ital,wght@1,700;1,900&display=swap">
+<link rel="stylesheet" href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;600;700;900&family=Fraunces:ital,wght@1,700;1,900&family=Outfit:wght@600;700;900&display=swap">
 <style>
 :root{
   --ink:#1a1a1a;
   --mute:#6b6b6b;
   --paper:#f7f1e6;
+  --paper-2:#fdf6e3;
   --line:#d9c9a8;
   --accent:#c2410c;
+  --accent-bg:#fef3e7;
   --gold:#b8860b;
+  --gold-bg:#fdf6e3;
   --blue:#1e3a8a;
-  --shadow:6px 6px 0 rgba(26,26,26,.12);
+  --blue-bg:#eef3fc;
+  --green:#2d6a4f;
+  --green-bg:#e8f3ed;
+  --red:#9b2c2c;
+  --shadow:8px 8px 0 rgba(26,26,26,.1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{
@@ -21,106 +28,470 @@ html,body{
   background:var(--paper);
   color:var(--ink);
   min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
   padding:40px 20px;
 }
 .card{
-  width:100%;max-width:1100px;
+  width:100%;max-width:1200px;margin:0 auto;
   background:#fff;
-  border:2px solid var(--ink);
-  padding:36px 40px 40px;
+  border:2.5px solid var(--ink);
+  padding:40px 48px 48px;
   box-shadow:var(--shadow);
   position:relative;
+  overflow:hidden;
 }
 .card::before{
   content:'';
-  position:absolute;top:0;left:0;right:0;height:5px;
+  position:absolute;top:0;left:0;right:0;height:6px;
   background:linear-gradient(90deg,var(--blue) 0%,var(--gold) 50%,var(--accent) 100%);
 }
+.card::after{
+  content:'STRATEGY';
+  position:absolute;right:-18px;top:80px;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:140px;color:rgba(26,26,26,.025);
+  letter-spacing:.05em;line-height:1;
+  pointer-events:none;
+}
 
-.tag{
+/* ========== HEADER ========== */
+.head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:2.5px solid var(--ink);
+  padding-bottom:18px;margin-bottom:36px;
+  position:relative;z-index:2;
+}
+.head-l .tag{
   display:inline-block;
   background:var(--ink);color:#fff;
-  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
-  font-size:11px;letter-spacing:.15em;
-  padding:4px 12px;margin-bottom:14px;
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:11px;letter-spacing:.18em;
+  padding:5px 12px;margin-bottom:10px;
 }
-.title{
+.head-l h1{
   font-family:'Noto Serif SC',serif;
-  font-size:26px;font-weight:900;
-  color:var(--ink);
-  letter-spacing:.02em;
-  margin-bottom:6px;
+  font-size:34px;font-weight:900;
+  letter-spacing:.02em;line-height:1.2;
 }
-.title .pop{color:var(--accent)}
-.sub{
+.head-l h1 .pop{color:var(--accent)}
+.head-l .sub{
   font-size:13px;color:var(--mute);
-  margin-bottom:28px;letter-spacing:.04em;
-  border-bottom:1.5px solid var(--ink);
-  padding-bottom:14px;
+  margin-top:6px;letter-spacing:.06em;
+}
+.head-r{text-align:right}
+.head-r .who{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:12px;color:var(--mute);
+}
+.head-r .date{
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:20px;color:var(--ink);
+  letter-spacing:.04em;margin-top:2px;
 }
 
-pre.tree{
-  font-family:'JetBrains Mono','Menlo','Noto Sans SC',monospace;
-  font-size:14px;
-  line-height:1.95;
-  color:var(--ink);
-  background:none;
-  white-space:pre;
-  text-align:left;
-  margin:0 auto;
-  font-weight:500;
+/* ========== ROOT NODE · 核心诉求 ========== */
+.root{
+  text-align:center;margin-bottom:8px;position:relative;z-index:2;
+}
+.root-label{
   display:inline-block;
-  padding:8px 0;
+  font-family:'Outfit',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.15em;
+  color:var(--mute);
+  background:var(--paper-2);
+  padding:3px 10px;margin-bottom:8px;
 }
-.wrap{text-align:center}
+.root-box{
+  display:inline-block;
+  background:var(--ink);color:#fff;
+  padding:18px 36px;
+  border-radius:0;
+  font-family:'Noto Serif SC',serif;
+  font-size:18px;font-weight:900;
+  letter-spacing:.04em;line-height:1.5;
+  position:relative;
+  box-shadow:5px 5px 0 var(--gold);
+}
+.root-box::before{
+  content:'"';
+  position:absolute;left:8px;top:-8px;
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:50px;font-weight:900;color:var(--accent);
+  line-height:1;
+}
+.root-box::after{
+  content:'"';
+  position:absolute;right:8px;bottom:-30px;
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:50px;font-weight:900;color:var(--accent);
+  line-height:1;
+}
+.root-box b{color:#ffd966;font-weight:900}
 
+/* connector */
+.conn{
+  display:flex;justify-content:center;align-items:center;
+  height:34px;position:relative;z-index:2;
+}
+.conn::before{
+  content:'';width:2.5px;height:100%;background:var(--ink);
+}
+
+.fork{
+  display:flex;justify-content:center;position:relative;
+  height:30px;margin-bottom:0;z-index:2;
+}
+.fork::before{
+  content:'';position:absolute;top:0;
+  width:560px;height:2.5px;background:var(--ink);
+}
+.fork::after{
+  content:'';position:absolute;top:0;
+  width:2.5px;height:30px;background:var(--ink);
+  left:50%;transform:translateX(-50%);
+}
+.fork-l, .fork-r{
+  position:absolute;top:0;
+  width:2.5px;height:30px;background:var(--ink);
+}
+.fork-l{left:calc(50% - 280px)}
+.fork-r{left:calc(50% + 280px)}
+
+/* ========== TWO PATHS ========== */
+.paths{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:40px;margin-bottom:12px;
+  position:relative;z-index:2;
+}
+.path{
+  border:2.5px solid;
+  padding:0;
+  position:relative;
+  background:#fff;
+}
+.path.a{
+  border-color:var(--blue);
+  box-shadow:5px 5px 0 var(--blue-bg);
+}
+.path.b{
+  border-color:var(--accent);
+  box-shadow:5px 5px 0 var(--accent-bg);
+}
+.path-banner{
+  padding:14px 20px;
+  color:#fff;
+  display:flex;align-items:baseline;gap:12px;
+  position:relative;overflow:hidden;
+}
+.path.a .path-banner{background:var(--blue)}
+.path.b .path-banner{background:var(--accent)}
+.path-banner::after{
+  content:attr(data-letter);
+  position:absolute;right:14px;top:-8px;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:72px;color:rgba(255,255,255,.18);line-height:1;
+}
+.path-letter{
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:28px;line-height:1;
+  letter-spacing:-.04em;color:#fff;
+}
+.path-title{
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:20px;letter-spacing:.02em;color:#fff;
+}
+.path-body{padding:20px 22px 22px}
+.path-tag{
+  display:inline-block;
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:11px;letter-spacing:.12em;
+  padding:3px 10px;margin-bottom:14px;
+}
+.path.a .path-tag{
+  background:var(--blue-bg);color:var(--blue);
+}
+.path.b .path-tag{
+  background:var(--accent-bg);color:var(--accent);
+}
+
+/* steps in path */
+.steps{display:flex;flex-direction:column;gap:8px}
+.step{
+  display:flex;align-items:center;gap:12px;
+  padding:11px 14px;
+  background:#fafaf6;
+  border-left:3px solid;
+  font-family:'Noto Serif SC',serif;font-weight:700;
+  font-size:14.5px;color:var(--ink);
+  letter-spacing:.02em;
+}
+.path.a .step{border-color:var(--blue)}
+.path.b .step{border-color:var(--accent)}
+.step .num{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:18px;line-height:1;
+  flex-shrink:0;
+}
+.path.a .step .num{color:var(--blue)}
+.path.b .step .num{color:var(--accent)}
+.step-arrow{
+  text-align:center;font-family:'Fraunces',serif;font-weight:900;
+  font-size:18px;color:var(--gold);font-style:italic;
+  margin:-2px 0;
+}
+
+/* ========== converge ========== */
+.merge{
+  display:flex;justify-content:center;
+  position:relative;height:34px;
+  margin-top:0;z-index:2;
+}
+.merge::before{
+  content:'';position:absolute;top:0;
+  width:560px;height:2.5px;background:var(--ink);bottom:0;
+  top:auto;
+}
+.merge-l, .merge-r{
+  position:absolute;bottom:0;
+  width:2.5px;height:34px;background:var(--ink);
+}
+.merge-l{left:calc(50% - 280px)}
+.merge-r{left:calc(50% + 280px)}
+.merge::after{
+  content:'';position:absolute;bottom:0;
+  width:2.5px;height:34px;background:var(--ink);
+  left:50%;transform:translateX(-50%);
+}
+
+/* phase nodes (阶段一 + 阶段二) */
+.phase{
+  text-align:center;margin-bottom:0;
+  position:relative;z-index:2;
+}
+.phase-tag{
+  display:inline-block;
+  font-family:'Outfit',sans-serif;font-weight:700;
+  font-size:10.5px;letter-spacing:.15em;
+  color:var(--mute);margin-bottom:6px;
+}
+.phase-box{
+  display:inline-block;
+  padding:14px 32px;
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:16px;letter-spacing:.04em;
+  position:relative;min-width:480px;
+}
+.phase.p1 .phase-box{
+  background:var(--gold-bg);
+  border:2.5px solid var(--gold);
+  color:var(--ink);
+  box-shadow:4px 4px 0 rgba(184,134,11,.2);
+}
+.phase.p2 .phase-box{
+  background:linear-gradient(135deg,#1a1a1a 0%,#3d2b1f 100%);
+  color:#fff;
+  border:2.5px solid var(--ink);
+  box-shadow:4px 4px 0 rgba(194,65,12,.4);
+}
+.phase-box .stage-num{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:22px;margin-right:10px;
+  letter-spacing:-.02em;
+}
+.phase.p1 .phase-box .stage-num{color:var(--gold)}
+.phase.p2 .phase-box .stage-num{color:#ffd966}
+.phase.p2 .phase-box b{color:#ffd966;font-weight:900}
+
+/* ========== Q3 收口 ========== */
+.q3-wrap{
+  margin-top:34px;
+  text-align:center;
+  position:relative;z-index:2;
+}
+.q3-tag{
+  display:inline-block;
+  background:var(--accent);color:#fff;
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:11px;letter-spacing:.15em;
+  padding:4px 14px;margin-bottom:14px;
+  box-shadow:3px 3px 0 var(--ink);
+}
+.q3-title{
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:20px;color:var(--ink);
+  letter-spacing:.04em;margin-bottom:18px;
+}
+.q3-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.q3-card{
+  padding:18px 16px;
+  background:#fff;
+  border-top:3px solid;
+  border-bottom:1px solid var(--line);
+  border-left:1px solid var(--line);
+  border-right:1px solid var(--line);
+  text-align:left;
+  position:relative;
+}
+.q3-card.c1{border-top-color:var(--blue)}
+.q3-card.c2{border-top-color:var(--accent)}
+.q3-card.c3{border-top-color:var(--green)}
+.q3-card-num{
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:10.5px;letter-spacing:.15em;
+  margin-bottom:4px;
+}
+.q3-card.c1 .q3-card-num{color:var(--blue)}
+.q3-card.c2 .q3-card-num{color:var(--accent)}
+.q3-card.c3 .q3-card-num{color:var(--green)}
+.q3-card-name{
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:15px;color:var(--ink);
+  letter-spacing:.02em;line-height:1.4;
+}
+
+/* footer */
 .foot{
-  margin-top:28px;
-  padding-top:14px;
+  margin-top:34px;
+  padding-top:16px;
   border-top:1.5px solid var(--line);
   display:flex;justify-content:space-between;align-items:center;
   font-size:11.5px;color:var(--mute);
+  position:relative;z-index:2;
 }
 .foot .brand{
   font-family:'Fraunces',serif;font-style:italic;font-weight:900;
-  color:var(--accent);font-size:12.5px;
+  color:var(--accent);font-size:13px;
 }
+
+/* 互补提示 */
+.tip{
+  text-align:center;margin-top:8px;margin-bottom:14px;
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:13.5px;color:var(--mute);font-weight:700;
+  letter-spacing:.04em;position:relative;z-index:2;
+}
+.tip b{color:var(--accent);font-weight:900;font-style:normal;font-family:'Noto Serif SC',serif}
 </style>
 </head>
 <body>
 
 <div class="card">
 
-  <div class="tag">🌳 商品力 · 思维逻辑图</div>
-  <h1 class="title">从「<span class="pop">商家诉求</span>」到「<span class="pop">业务收口</span>」</h1>
-  <div class="sub">商品力打造的双路径互补战略 · 阶段化方法论 · 三大业务收口</div>
-
-  <div class="wrap">
-<pre class="tree">                  所有商家的同一个核心诉求
-              「在视频号上，提升跑出新品的效率与确定性」
-                              ↓
-                  ┌───────────┴───────────┐
-                  ↓                       ↓
-       路径 A · 用「测」找品          路径 B · 用「洞察」选品
-       提效率 / 低成本规模化广撒网    提确定性 / 方向感 + 针对性深耕
-                  ↓                       ↓
-       全店托管 / 低预算测评          品类洞察 → 锁定方向 → 定制开品
-                  ↓                       ↓
-            跑出来再放大                选准方向打透吃透
-                  │                       │
-                  └───────────┬───────────┘
-                              ↓
-                  阶段一 · 单点解决方案打出真本事
-                              ↓
-                  阶段二 · AI 规模化沉淀为业务弹药
-                              ↓
-                       Q3 三大业务收口
-                ├─ 投放端：小店营销标签外显
-                ├─ 外部拓客：IP 节点整合
-                └─ 内部策略：中台优质标签 + 跑出策略</pre>
+  <!-- HEAD -->
+  <div class="head">
+    <div class="head-l">
+      <div class="tag">🌳 商品力 · 思维逻辑图</div>
+      <h1>从「<span class="pop">商家诉求</span>」到「<span class="pop">业务收口</span>」</h1>
+      <div class="sub">商品力打造的双路径互补战略 · 阶段化方法论 · Q3 三大收口</div>
+    </div>
+    <div class="head-r">
+      <div class="who">CDG / 商品消费部 / 食饮中心 / 运营组</div>
+      <div class="date">2026.06</div>
+    </div>
   </div>
 
+  <!-- ROOT · 核心诉求 -->
+  <div class="root">
+    <div class="root-label">CORE NEED · 所有商家的同一个核心诉求</div>
+    <div class="root-box">
+      在视频号上，提升<b>跑出新品</b>的效率与确定性
+    </div>
+  </div>
+
+  <!-- 分叉 -->
+  <div class="conn"></div>
+  <div class="fork">
+    <div class="fork-l"></div>
+    <div class="fork-r"></div>
+  </div>
+
+  <!-- 两条路径 -->
+  <div class="paths">
+    <!-- PATH A -->
+    <div class="path a">
+      <div class="path-banner" data-letter="A">
+        <div class="path-letter">A</div>
+        <div class="path-title">用「测」找品</div>
+      </div>
+      <div class="path-body">
+        <span class="path-tag">提效率 · 低成本广撒网</span>
+        <div class="steps">
+          <div class="step"><span class="num">①</span>全店托管 / 低预算测评</div>
+          <div class="step-arrow">↓</div>
+          <div class="step"><span class="num">②</span>AI 自动跑出潜力品</div>
+          <div class="step-arrow">↓</div>
+          <div class="step"><span class="num">③</span>后置资源放大</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PATH B -->
+    <div class="path b">
+      <div class="path-banner" data-letter="B">
+        <div class="path-letter">B</div>
+        <div class="path-title">用「洞察」选品</div>
+      </div>
+      <div class="path-body">
+        <span class="path-tag">提确定性 · 方向感 + 深耕</span>
+        <div class="steps">
+          <div class="step"><span class="num">①</span>品类数据洞察</div>
+          <div class="step-arrow">↓</div>
+          <div class="step"><span class="num">②</span>锁定方向 + 定制开品</div>
+          <div class="step-arrow">↓</div>
+          <div class="step"><span class="num">③</span>选准方向打透吃透</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 互补提示 -->
+  <div class="tip">
+    💡 A 和 B 不是非此即彼——<b>A 先广撒网跑测 → 跑出潜力品 → B 围绕潜力品深耕</b>
+  </div>
+
+  <!-- 合流 -->
+  <div class="merge">
+    <div class="merge-l"></div>
+    <div class="merge-r"></div>
+  </div>
+  <div class="conn"></div>
+
+  <!-- 阶段一 -->
+  <div class="phase p1">
+    <div class="phase-tag">STAGE 01</div>
+    <div class="phase-box"><span class="stage-num">01</span>单点解决方案 · 打出真本事</div>
+  </div>
+  <div class="conn"></div>
+
+  <!-- 阶段二 -->
+  <div class="phase p2">
+    <div class="phase-tag">STAGE 02</div>
+    <div class="phase-box"><span class="stage-num">02</span><b>AI 规模化</b>沉淀为业务弹药</div>
+  </div>
+  <div class="conn"></div>
+
+  <!-- Q3 三大业务收口 -->
+  <div class="q3-wrap">
+    <div class="q3-tag">🚀 Q3 BUSINESS CONVERGE</div>
+    <div class="q3-title">Q3 三大业务收口</div>
+    <div class="q3-grid">
+      <div class="q3-card c1">
+        <div class="q3-card-num">01 · 投放端</div>
+        <div class="q3-card-name">小店营销标签外显</div>
+      </div>
+      <div class="q3-card c2">
+        <div class="q3-card-num">02 · 外部拓客</div>
+        <div class="q3-card-name">IP 节点整合拓客</div>
+      </div>
+      <div class="q3-card c3">
+        <div class="q3-card-num">03 · 内部策略</div>
+        <div class="q3-card-name">中台优质标签 + 跑出策略</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOT -->
   <div class="foot">
     <span><span class="brand">商品力思维逻辑图</span> · 食品饮料中心运营组 · 2026.06</span>
     <span>右键 → 另存为图片 / 直接截图嵌入汇报文档</span>
