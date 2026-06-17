@@ -169,100 +169,6 @@ body{
   padding:1px 4px;border-radius:2px;
 }
 
-/* SCENE · 场景画面（销售拜访 with AI Copilot）*/
-.scene{
-  background:#fff;
-  border:2px solid var(--ink);
-  padding:18px 24px;
-  margin-bottom:18px;
-  position:relative;
-  box-shadow:6px 6px 0 var(--gold);
-}
-.scene-tag{
-  display:inline-block;
-  background:var(--ink);color:#fff;
-  font-family:'Outfit',sans-serif;
-  font-size:11px;font-weight:700;letter-spacing:.1em;
-  padding:3px 10px;
-  margin-bottom:10px;
-}
-.scene-title{
-  font-family:'Noto Serif SC',serif;
-  font-size:18px;font-weight:900;
-  color:var(--ink);margin:0 0 14px 0;
-  letter-spacing:.02em;
-}
-.scene-cmp{
-  display:grid;
-  grid-template-columns:1fr 36px 1fr;
-  gap:0;align-items:stretch;
-  margin-bottom:12px;
-}
-.scene-col{
-  padding:14px 16px;
-  border:1.5px solid #d4c5a9;
-  background:#fafaf6;
-}
-.scene-col.after{
-  border:2px solid var(--accent);
-  background:var(--accent-bg);
-}
-.scene-col-tag{
-  font-family:'Outfit',sans-serif;
-  font-size:11px;font-weight:700;
-  letter-spacing:.08em;
-  margin-bottom:8px;
-  color:var(--mute);
-  text-transform:uppercase;
-}
-.scene-col.after .scene-col-tag{color:var(--accent)}
-.scene-col ul{
-  list-style:none;padding:0;margin:0 0 10px 0;
-  display:flex;flex-direction:column;gap:5px;
-}
-.scene-col li{
-  font-size:13px;font-weight:600;
-  color:var(--ink);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:4px 0;
-  border-bottom:1px dashed rgba(0,0,0,.08);
-}
-.scene-col li:last-child{border-bottom:none}
-.scene-col li b{color:var(--accent);font-weight:900}
-.scene-col li .cost{
-  font-family:'Outfit',sans-serif;
-  font-size:11px;font-weight:700;
-  color:var(--mute);
-  background:rgba(0,0,0,.04);
-  padding:2px 7px;border-radius:2px;
-  flex-shrink:0;margin-left:8px;
-}
-.scene-col.after li .cost{
-  background:var(--accent);color:#fff;
-}
-.scene-conclude{
-  font-size:12.5px;font-weight:700;
-  color:var(--ink);
-  padding-top:8px;
-  border-top:1.5px solid var(--ink);
-  margin-top:4px;
-}
-.scene-conclude b{color:var(--accent);font-weight:900;font-size:14px}
-.scene-arrow{
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Fraunces',serif;
-  font-size:28px;font-weight:900;
-  color:var(--gold);
-}
-.scene-foot{
-  background:var(--gold-bg);
-  border-left:3px solid var(--gold);
-  padding:10px 14px;
-  font-size:12.5px;font-weight:600;
-  line-height:1.7;
-  color:var(--ink);
-}
-.scene-foot b{color:var(--accent);font-weight:900}
 
 /* BIGSHOT · Before/After 一帧大片（杂志风）*/
 .bigshot{
@@ -328,9 +234,20 @@ body{
   padding-bottom:8px;
 }
 .bs-frame.after .bs-cast{color:#ffd966;font-size:15px}
+.bs-section-tag{
+  font-family:'Outfit',sans-serif;
+  font-size:10.5px;font-weight:900;
+  letter-spacing:.1em;
+  color:rgba(255,255,255,.65);
+  margin-top:10px;margin-bottom:6px;
+  padding-bottom:3px;
+  border-bottom:1px dashed rgba(255,217,102,.25);
+}
+.bs-frame.after .bs-section-tag{color:#ffd966}
+.bs-section-tag:first-of-type{margin-top:0}
 .bs-num{
-  display:flex;flex-direction:column;gap:5px;
-  margin-bottom:10px;
+  display:flex;flex-direction:column;gap:4px;
+  margin-bottom:6px;
 }
 .bs-row{
   display:flex;justify-content:space-between;align-items:baseline;
@@ -926,75 +843,60 @@ body{
   </div>
 </div>
 
-<!-- SCENE · 场景感画面 · 销售拜访 with AI Copilot -->
-<div class="scene">
-  <div class="scene-tag">🎬 一个真实场景</div>
-  <h3 class="scene-title">真实案例：销售要给「沙漠一号 · 虎坚果」客户做开品方案 ——</h3>
-  <div class="scene-cmp">
-    <div class="scene-col before">
-      <div class="scene-col-tag">过去 · 小 Wing 单兵作战</div>
-      <ul>
-        <li>翻爆品榜单 <span class="cost">半天</span></li>
-        <li>想人群洞察 <span class="cost">拍脑袋</span></li>
-        <li>写开品建议 <span class="cost">半天</span></li>
-        <li>配营销话术 <span class="cost">半天</span></li>
-      </ul>
-      <div class="scene-conclude">小 Wing 最快也要 <b>1 周</b> 才能给销售同事一份资深策略师级方案</div>
-    </div>
-    <div class="scene-arrow">→</div>
-    <div class="scene-col after">
-      <div class="scene-col-tag">现在 · 销售主驾 + AI 副驾</div>
-      <ul>
-        <li>销售输入客户信息 + 自定义产出量（SKU/P0/主线 数量） <span class="cost">30 秒</span></li>
-        <li><b>小 Wing 做的 AI Copilot</b> 按销售设定的产能产出方案 <span class="cost">5 分钟</span></li>
-        <li>销售判断 / 调话术 / 敲方案 <span class="cost">主驾决策</span></li>
-      </ul>
-      <div class="scene-conclude">本案例销售选择 <b>8 款 SKU + 3 主线营销</b>（含中老年 P0 单品）→
-        <a href="case-shamo-tigernut.html" target="_blank" style="color:var(--accent);font-weight:900">查看案例 OnePage ↗</a>
-      </div>
-    </div>
-  </div>
-  <div class="scene-foot">
-    <b>AI 是副驾、销售是主驾、运营做产品</b>——小 Wing 把<b>一个资深运营的开品经验</b>工程化为 AI Copilot；
-    AI 接手数据搜集 / 规则匹配 / 文案生成，销售保留对客户的判断、人设、话术校准。
-    一个人的能力，变成<b>全员销售身边随时能开机的副驾</b>。
-  </div>
-</div>
-
-<!-- BIGSHOT · Before/After 一帧大片（小 Wing 主角第二章·军备扩张）-->
+<!-- BIGSHOT · 小 Wing 的开品故事（单客户细节 + 覆盖规模 双层 BEFORE/AFTER 一帧整合）-->
 <div class="bigshot">
   <div class="bigshot-meta">
     <span class="bs-tag">📷 BEFORE / AFTER</span>
-    <span class="bs-title">小 Wing 的第二章 · 从单兵到军团</span>
+    <span class="bs-title">小 Wing 的开品故事 · 从一个人到一支军团</span>
   </div>
   <div class="bigshot-cmp">
     <div class="bs-frame before">
       <div class="bs-era">2025 Q3</div>
       <div class="bs-cast">小 Wing 一个人</div>
+
+      <div class="bs-section-tag">🎯 单客户交付（以虎坚果为例）</div>
+      <div class="bs-num">
+        <div class="bs-row"><span>翻爆品榜单</span><b>半天</b></div>
+        <div class="bs-row"><span>想人群洞察</span><b>拍脑袋</b></div>
+        <div class="bs-row"><span>写建议 + 配话术</span><b>1 天</b></div>
+        <div class="bs-row"><span>交付周期</span><b>1 周 / 客户</b></div>
+      </div>
+
+      <div class="bs-section-tag">🌐 覆盖规模</div>
       <div class="bs-num">
         <div class="bs-row"><span>客户覆盖</span><b>N = 几十</b></div>
-        <div class="bs-row"><span>交付周期</span><b>1 周 / 客户</b></div>
         <div class="bs-row"><span>数据视野</span><b>广告域 1 斑</b></div>
-        <div class="bs-row"><span>方法论</span><b>装在脑子里</b></div>
+        <div class="bs-row"><span>方法论</span><b>装在脑子里 · 做完即弃</b></div>
       </div>
+
       <div class="bs-tag-line">⚔ 单兵作战 · 一身武功无处传</div>
     </div>
     <div class="bs-vs">VS</div>
     <div class="bs-frame after">
       <div class="bs-era">2026 Q2</div>
       <div class="bs-cast">小 Wing × 50 销售 → 26000 商家</div>
+
+      <div class="bs-section-tag">🎯 单客户交付（销售主驾 + AI 副驾）</div>
       <div class="bs-num">
-        <div class="bs-row"><span>客户覆盖</span><b>面状 N = 数百+ · 点状可达 26000</b></div>
-        <div class="bs-row"><span>交付周期</span><b>5 分钟 / 客户（300×）</b></div>
-        <div class="bs-row"><span>数据视野</span><b>视频号小店全量 20162 SKU</b></div>
-        <div class="bs-row"><span>方法论</span><b>固化为 SKILL · 50 人 fork</b></div>
+        <div class="bs-row"><span>销售输入客户信息</span><b>30 秒</b></div>
+        <div class="bs-row"><span>AI Copilot 产出方案</span><b>5 分钟</b></div>
+        <div class="bs-row"><span>销售判断/调话术/敲方案</span><b>主驾决策</b></div>
+        <div class="bs-row"><span>本案例输出</span><b>8 款 SKU+3 主线 → <a href="case-shamo-tigernut.html" target="_blank" style="color:#ffd966;text-decoration:underline">虎坚果案例 ↗</a></b></div>
       </div>
+
+      <div class="bs-section-tag">🌐 覆盖规模</div>
+      <div class="bs-num">
+        <div class="bs-row"><span>客户覆盖</span><b>面状 N = 数百+ / 点状可达 26000</b></div>
+        <div class="bs-row"><span>数据视野</span><b>视频号全量 20162 SKU</b></div>
+        <div class="bs-row"><span>方法论</span><b>SKILL 化 · 50 人 fork</b></div>
+      </div>
+
       <div class="bs-tag-line">⚡ 军团作战 · 一人武功全员开机</div>
     </div>
   </div>
   <div class="bigshot-foot">
-    🔑 关键跃迁：<b>从「为单个客户人工开品（做完即弃）」到「工程化批量为全行业客户开品（5 分钟/次、可复用）」</b>——
-    AI 不是替代小 Wing，是把<b>小 Wing 的开品经验工程化为全员销售随时能开机的副驾</b>。
+    🔑 <b>AI 是副驾、销售是主驾、运营做产品</b>——AI 接手数据搜集/规则匹配/文案生成，销售保留对客户的判断、人设、话术校准。
+    把<b>小 Wing 的开品经验工程化为全员销售随时能开机的副驾</b>：一个人的能力，变成 50 销售可服务 26000 商家的军团能力。
   </div>
 </div>
 
