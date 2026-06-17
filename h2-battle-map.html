@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>商品力 · H2 作战图</title>
+<link rel="stylesheet" href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;600;700&family=Fraunces:ital,wght@1,700;1,900&family=Outfit:wght@600;700;900&display=swap">
+<style>
+:root{
+  --ink:#1a1a1a;
+  --mute:#6b6b6b;
+  --paper:#f7f1e6;
+  --paper-2:#f1e9d5;
+  --line:#d9c9a8;
+  --accent:#c2410c;
+  --accent-bg:#fef3e7;
+  --gold:#b8860b;
+  --gold-bg:#fdf6e3;
+  --green:#2d6a4f;
+  --green-bg:#e8f3ed;
+  --blue:#1e3a8a;
+  --blue-bg:#eef3fc;
+  --red:#9b2c2c;
+  --shadow:6px 6px 0 rgba(26,26,26,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  font-family:'Noto Sans SC',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:14px;line-height:1.6;
+  min-height:100vh;
+}
+.stage{
+  width:1820px;margin:0 auto;
+  padding:40px 48px 60px;
+  background:var(--paper);
+  position:relative;
+}
+.stage::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--accent) 0%,var(--gold) 50%,var(--green) 100%);
+}
+
+/* HERO */
+.hero{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:3px solid var(--ink);
+  padding-bottom:18px;margin-bottom:30px;
+  position:relative;
+}
+.hero::after{
+  content:'BATTLE MAP';
+  position:absolute;right:0;top:-12px;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:96px;color:rgba(26,26,26,.04);
+  letter-spacing:.02em;line-height:1;z-index:0;
+}
+.hero-l{position:relative;z-index:1}
+.hero-tag{
+  display:inline-block;
+  background:var(--ink);color:#fff;
+  font-family:'Outfit',sans-serif;
+  font-size:11px;font-weight:900;letter-spacing:.15em;
+  padding:4px 12px;margin-bottom:10px;
+}
+.hero-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:46px;font-weight:900;
+  line-height:1.15;letter-spacing:-.01em;
+  color:var(--ink);
+}
+.hero-title .pop{color:var(--accent)}
+.hero-sub{
+  font-size:15px;font-weight:600;color:var(--mute);
+  margin-top:8px;letter-spacing:.02em;
+}
+.hero-r{
+  position:relative;z-index:1;
+  text-align:right;
+}
+.hero-r .who{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:13px;color:var(--mute);
+  margin-bottom:4px;
+}
+.hero-r .date{
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:22px;color:var(--ink);
+  letter-spacing:.02em;
+}
+
+/* CORE STATEMENT 横幅 */
+.creed{
+  background:var(--ink);color:#fff;
+  padding:16px 24px;margin-bottom:30px;
+  display:flex;align-items:center;gap:18px;
+  box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.creed::before{
+  content:'CORE';
+  position:absolute;right:18px;top:-4px;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:60px;color:rgba(255,255,255,.04);
+  letter-spacing:.05em;line-height:1;
+}
+.creed-tag{
+  background:#ffd966;color:var(--ink);
+  font-family:'Outfit',sans-serif;
+  font-size:11px;font-weight:900;letter-spacing:.12em;
+  padding:3px 10px;flex-shrink:0;
+  position:relative;z-index:1;
+}
+.creed-text{
+  font-family:'Noto Serif SC',serif;
+  font-size:18px;font-weight:700;
+  color:#fff;letter-spacing:.02em;
+  position:relative;z-index:1;
+}
+.creed-text b{color:#ffd966;font-weight:900}
+
+/* BIG MAP */
+.map{
+  background:#fff;
+  border:2px solid var(--ink);
+  padding:36px 32px 28px;
+  margin-bottom:30px;
+  position:relative;
+  box-shadow:var(--shadow);
+}
+.map-q{
+  text-align:center;
+  font-family:'Noto Serif SC',serif;
+  font-size:22px;font-weight:900;
+  color:var(--ink);
+  margin-bottom:6px;
+  letter-spacing:.02em;
+}
+.map-q .quote{color:var(--accent);font-family:'Fraunces',serif;font-style:italic;font-weight:900;font-size:32px;vertical-align:middle}
+.map-q-sub{
+  text-align:center;
+  font-size:13px;color:var(--mute);
+  margin-bottom:24px;
+  letter-spacing:.05em;
+}
+.fork-line{
+  text-align:center;
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:36px;color:var(--gold);
+  font-weight:900;line-height:.5;
+  margin:0 0 14px 0;
+}
+
+/* 两条路径 */
+.paths{
+  display:grid;grid-template-columns:1fr 60px 1fr;
+  gap:0;align-items:stretch;
+  margin-bottom:28px;
+}
+.path{
+  padding:24px 24px;
+  border:2px solid;
+  position:relative;
+}
+.path.a{
+  background:var(--blue-bg);
+  border-color:var(--blue);
+}
+.path.b{
+  background:var(--accent-bg);
+  border-color:var(--accent);
+}
+.path-head{
+  display:flex;align-items:baseline;gap:10px;
+  border-bottom:2px solid;padding-bottom:10px;margin-bottom:14px;
+}
+.path.a .path-head{border-color:var(--blue)}
+.path.b .path-head{border-color:var(--accent)}
+.path-code{
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:32px;letter-spacing:-.04em;line-height:1;
+}
+.path.a .path-code{color:var(--blue)}
+.path.b .path-code{color:var(--accent)}
+.path-name{
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:20px;color:var(--ink);
+  letter-spacing:.02em;
+}
+.path-byline{
+  font-family:'Outfit',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.1em;
+  color:var(--mute);text-transform:uppercase;
+  margin-left:auto;
+}
+.path-strat{
+  font-size:13.5px;font-weight:600;
+  color:var(--ink);line-height:1.65;
+  padding:10px 12px;
+  background:#fff;
+  border-left:3px solid;
+  margin-bottom:14px;
+}
+.path.a .path-strat{border-color:var(--blue)}
+.path.b .path-strat{border-color:var(--accent)}
+.path-strat b{font-weight:900}
+.path.a .path-strat b{color:var(--blue)}
+.path.b .path-strat b{color:var(--accent)}
+
+.path-chain{
+  font-family:'Outfit',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:.12em;
+  color:var(--mute);
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.chain-steps{
+  display:flex;flex-wrap:wrap;align-items:center;gap:4px;
+  margin-bottom:16px;font-size:12.5px;font-weight:700;
+}
+.chain-step{
+  background:#fff;padding:5px 9px;
+  border:1px solid;border-radius:0;
+}
+.path.a .chain-step{border-color:var(--blue);color:var(--blue)}
+.path.b .chain-step{border-color:var(--accent);color:var(--accent)}
+.chain-arrow{font-weight:900;color:var(--gold);font-family:'Fraunces',serif}
+
+/* Q2 / Q3 双格 */
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.q-cell{
+  background:#fff;
+  padding:12px 14px;
+}
+.path.a .q-cell{border-top:3px solid var(--blue)}
+.path.b .q-cell{border-top:3px solid var(--accent)}
+.q-cell-tag{
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:10.5px;letter-spacing:.15em;
+  color:var(--mute);margin-bottom:6px;
+}
+.q-cell.q2 .q-cell-tag{color:var(--ink)}
+.q-cell.q3 .q-cell-tag{color:var(--accent)}
+.q-cell ul{list-style:none;padding:0;margin:0}
+.q-cell li{
+  font-size:12px;font-weight:600;
+  line-height:1.6;color:var(--ink);
+  padding:3px 0 3px 14px;position:relative;
+}
+.q-cell li::before{
+  content:'›';position:absolute;left:0;top:0;
+  font-family:'Fraunces',serif;font-weight:900;
+  color:var(--gold);font-size:14px;
+}
+.q-cell li b{color:var(--accent);font-weight:900}
+.q-cell.q3 li b{color:var(--accent);font-weight:900}
+.q-cell .own{
+  font-size:10.5px;color:var(--mute);
+  font-style:italic;
+}
+
+/* VS 中柱 */
+.vs{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;
+}
+.vs-arrow{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:22px;color:var(--ink);font-weight:900;
+}
+.vs-and{
+  background:var(--ink);color:#fff;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:16px;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  letter-spacing:.05em;
+}
+
+/* CONVERGE 收口 */
+.converge{
+  margin-top:18px;
+  background:linear-gradient(90deg,var(--blue-bg) 0%,var(--paper) 50%,var(--accent-bg) 100%);
+  border:2px dashed var(--gold);
+  padding:14px 18px;
+  text-align:center;
+}
+.converge-tag{
+  display:inline-block;
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:11px;letter-spacing:.15em;
+  background:var(--gold);color:#fff;
+  padding:3px 10px;margin-bottom:8px;
+}
+.converge-text{
+  font-family:'Noto Serif SC',serif;
+  font-size:14.5px;font-weight:700;color:var(--ink);
+  line-height:1.7;
+}
+.converge-text b{color:var(--accent);font-weight:900}
+
+/* 阶段一 + 阶段二 卡片 */
+.stages{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+  margin-bottom:28px;
+}
+.stage-card{
+  background:#fff;
+  padding:24px;
+  border:2px solid var(--ink);
+  position:relative;
+  box-shadow:var(--shadow);
+}
+.stage-card.s1{background:var(--gold-bg)}
+.stage-card.s2{
+  background:linear-gradient(135deg,#1a1a1a 0%,#3d2b1f 100%);
+  color:#fff;
+}
+.stage-head{
+  display:flex;align-items:center;gap:12px;
+  border-bottom:2px solid;padding-bottom:10px;margin-bottom:14px;
+}
+.stage-card.s1 .stage-head{border-color:var(--gold)}
+.stage-card.s2 .stage-head{border-color:#ffd966}
+.stage-num{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:42px;line-height:1;letter-spacing:-.04em;
+}
+.stage-card.s1 .stage-num{color:var(--gold)}
+.stage-card.s2 .stage-num{color:#ffd966}
+.stage-name{
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:18px;letter-spacing:.02em;
+}
+.stage-card.s2 .stage-name{color:#fff}
+.stage-tag{
+  font-family:'Outfit',sans-serif;font-weight:700;
+  font-size:10.5px;letter-spacing:.12em;
+  color:var(--mute);text-transform:uppercase;
+  margin-left:auto;
+}
+.stage-card.s2 .stage-tag{color:#ffd966}
+.bullets{display:flex;flex-direction:column;gap:10px}
+.bullet{
+  padding:10px 12px;
+  border-left:3px solid;
+  background:rgba(255,255,255,.5);
+}
+.stage-card.s2 .bullet{
+  background:rgba(255,255,255,.06);
+}
+.stage-card.s1 .bullet{border-color:var(--gold)}
+.stage-card.s2 .bullet{border-color:#ffd966}
+.bullet-name{
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:14px;letter-spacing:.02em;
+  margin-bottom:3px;
+  color:var(--ink);
+}
+.stage-card.s2 .bullet-name{color:#ffd966}
+.bullet-desc{
+  font-size:12px;font-weight:600;line-height:1.6;
+  color:var(--ink);
+}
+.stage-card.s2 .bullet-desc{color:rgba(255,255,255,.85)}
+.bullet-desc b{color:var(--accent);font-weight:900}
+.stage-card.s2 .bullet-desc b{color:#ffd966}
+.stage-foot{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1.5px dashed;
+  font-size:11.5px;font-weight:600;
+  font-style:italic;
+}
+.stage-card.s1 .stage-foot{border-color:var(--gold);color:var(--mute)}
+.stage-card.s2 .stage-foot{border-color:#ffd966;color:rgba(255,255,255,.7)}
+
+/* Q3 收口 3 大方向 */
+.q3-zone{
+  background:#fff;
+  border:2px solid var(--ink);
+  padding:24px;margin-bottom:24px;
+  box-shadow:var(--shadow);
+}
+.q3-head{
+  display:flex;align-items:center;gap:12px;
+  border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px;
+}
+.q3-tag{
+  background:var(--accent);color:#fff;
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:11px;letter-spacing:.15em;
+  padding:4px 12px;
+}
+.q3-title{
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:18px;color:var(--ink);
+}
+.q3-sub{
+  font-size:12.5px;color:var(--mute);
+  margin-left:auto;
+  font-family:'Fraunces',serif;font-style:italic;
+}
+.q3-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.q3-card{
+  padding:14px 16px;
+  border-left:3px solid;
+  background:var(--paper);
+}
+.q3-card.c1{border-color:var(--blue)}
+.q3-card.c2{border-color:var(--accent)}
+.q3-card.c3{border-color:var(--green)}
+.q3-card-num{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:14px;letter-spacing:.04em;
+  margin-bottom:4px;
+}
+.q3-card.c1 .q3-card-num{color:var(--blue)}
+.q3-card.c2 .q3-card-num{color:var(--accent)}
+.q3-card.c3 .q3-card-num{color:var(--green)}
+.q3-card-name{
+  font-family:'Noto Serif SC',serif;font-weight:900;
+  font-size:14.5px;color:var(--ink);
+  margin-bottom:6px;letter-spacing:.02em;
+}
+.q3-card-desc{
+  font-size:12px;font-weight:600;line-height:1.65;
+  color:var(--ink);
+}
+.q3-card-desc b{font-weight:900}
+.q3-card.c1 .q3-card-desc b{color:var(--blue)}
+.q3-card.c2 .q3-card-desc b{color:var(--accent)}
+.q3-card.c3 .q3-card-desc b{color:var(--green)}
+.q3-card-own{
+  margin-top:6px;
+  font-size:11px;font-style:italic;
+  color:var(--mute);
+}
+
+/* FOOTER */
+.foot{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:18px;
+  border-top:2px solid var(--ink);
+  font-size:12px;color:var(--mute);
+}
+.foot .brand{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  color:var(--accent);font-size:13.5px;
+}
+.foot a{color:var(--accent);text-decoration:none;font-weight:700}
+.foot a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-l">
+      <div class="hero-tag">📊 H2 BATTLE MAP · 食饮中心</div>
+      <h1 class="hero-title">商品力 · <span class="pop">H2 作战图</span></h1>
+      <div class="hero-sub">商品力打造的双路径互补战略 · 阶段一打真本事 + 阶段二 AI 规模化</div>
+    </div>
+    <div class="hero-r">
+      <div class="who">CDG / 商品消费部 / 食饮中心 / 运营组</div>
+      <div class="date">2026.06</div>
+    </div>
+  </div>
+
+  <!-- CORE STATEMENT -->
+  <div class="creed">
+    <span class="creed-tag">CORE BELIEF</span>
+    <div class="creed-text">
+      商品力 = 给商家投视频号资源的「<b>确定性抓手</b>」 ·
+      商家不缺品，缺的是「<b>哪个品能在视频号上爆</b>」的判断。
+    </div>
+  </div>
+
+  <!-- MAIN MAP -->
+  <div class="map">
+    <div class="map-q">
+      <span class="quote">"</span> 货架上有 N 个品，不知道哪个品在视频号能爆 <span class="quote">"</span>
+    </div>
+    <div class="map-q-sub">所有商家的同一个核心诉求 · 提升跑出新品的效率与确定性</div>
+    <div class="fork-line">↓</div>
+
+    <div class="paths">
+      <!-- PATH A -->
+      <div class="path a">
+        <div class="path-head">
+          <div class="path-code">A</div>
+          <div class="path-name">用「测」找品</div>
+          <div class="path-byline">提效率 · 广撒网</div>
+        </div>
+        <div class="path-strat">
+          以<b>全店托管</b>为最低成本投放抓手——AI 自动测出潜力品，销售/运营<b>后置投入资源</b>规模化放大
+        </div>
+        <div class="path-chain">⚙ 核心动作链</div>
+        <div class="chain-steps">
+          <span class="chain-step">全店托管</span>
+          <span class="chain-arrow">→</span>
+          <span class="chain-step">AI 测出潜力品</span>
+          <span class="chain-arrow">→</span>
+          <span class="chain-step">后置资源放大</span>
+        </div>
+        <div class="q-grid">
+          <div class="q-cell q2">
+            <div class="q-cell-tag">Q2 进展</div>
+            <ul>
+              <li>锋味派<b>测新 goodcase</b> 引导行业开品入投</li>
+              <li>完成 XX 客户落地，新增 <b>XX 消耗</b>，跑出 XX 新品</li>
+            </ul>
+          </div>
+          <div class="q-cell q3">
+            <div class="q-cell-tag">Q3 规划</div>
+            <ul>
+              <li>投放端外显<b>小店营销标签</b>，提升客户编创效率</li>
+              <li>标签反向校准商品力（标签 → 素材 → 数据回流）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- VS -->
+      <div class="vs">
+        <div class="vs-arrow">↓</div>
+        <div class="vs-and">&</div>
+        <div class="vs-arrow">↓</div>
+      </div>
+
+      <!-- PATH B -->
+      <div class="path b">
+        <div class="path-head">
+          <div class="path-code">B</div>
+          <div class="path-name">用「洞察」选品</div>
+          <div class="path-byline">提确定性 · 深耕</div>
+        </div>
+        <div class="path-strat">
+          以<b>品类数据洞察</b>为起点——先给方向，再针对性<b>开品打透吃透</b>
+        </div>
+        <div class="path-chain">⚙ 核心动作链</div>
+        <div class="chain-steps">
+          <span class="chain-step">品类洞察</span>
+          <span class="chain-arrow">→</span>
+          <span class="chain-step">锁定方向</span>
+          <span class="chain-arrow">→</span>
+          <span class="chain-step">定制开品</span>
+          <span class="chain-arrow">→</span>
+          <span class="chain-step">AI 规模化</span>
+        </div>
+        <div class="q-grid">
+          <div class="q-cell q2">
+            <div class="q-cell-tag">Q2 进展</div>
+            <ul>
+              <li>3 份品类报告（端午/秋令/冬令）<b>双季 20162 SKU</b></li>
+              <li>客户案例：<b>虎坚果 / 红盒子</b></li>
+              <li>营销节点弹药包：<b>Q3 Calendar</b></li>
+              <li><b>AI 拓品 Copilot V1.1</b> 上线 · 产出可定制</li>
+            </ul>
+          </div>
+          <div class="q-cell q3">
+            <div class="q-cell-tag">Q3 规划</div>
+            <ul>
+              <li>以 <b>IP 节点</b>为大帽子整合「商品 × 内容 × 客户」</li>
+              <li>中台优质标签 + 商品资源跑出策略</li>
+              <li>补齐端午<b>数据/策略断层</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 收口 -->
+    <div class="converge">
+      <div class="converge-tag">A ＋ B 互补</div>
+      <div class="converge-text">
+        A 和 B 不是非此即彼——同一商家往往是「<b>A 先广撒网跑测 → 跑出潜力品 → B 围绕潜力品深耕</b>」，<br>
+        形成「广撒网 + 深耕作」的完整经营节奏。
+      </div>
+    </div>
+  </div>
+
+  <!-- 阶段一 + 阶段二 -->
+  <div class="stages">
+
+    <!-- 阶段一 -->
+    <div class="stage-card s1">
+      <div class="stage-head">
+        <div class="stage-num">01</div>
+        <div class="stage-name">阶段一 · 单点业务子弹</div>
+        <div class="stage-tag">先打真本事</div>
+      </div>
+      <div class="bullets">
+        <div class="bullet">
+          <div class="bullet-name">① 品类趋势洞察 + 品类榜单</div>
+          <div class="bullet-desc">端午（4 周）/ 秋令 Q3（10650 SKU/<b>33 亿</b>）/ 冬令 Q4（9512 SKU/<b>27.4 亿</b>） — 3 份完整报告，给客户 <b>insight</b>，不是 information</div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-name">② 客户开品指南（点状定制）</div>
+          <div class="bullet-desc"><b>虎坚果</b>（toB 转 toC 新锐 · 8 SKU + 3 主线） / <b>红盒子</b>（竞媒 Top 入驻视频号差异化开品）</div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-name">③ 营销节点弹药包</div>
+          <div class="bullet-desc">从秋令冬令报告抽离时令节点 → <b>Q3 Calendar</b>（祛湿消暑 / 中秋礼盒 / 冬令进补 + 年货）</div>
+        </div>
+      </div>
+      <div class="stage-foot">解决方案被销售认可 → AI 介入规模化沉淀 →</div>
+    </div>
+
+    <!-- 阶段二 -->
+    <div class="stage-card s2">
+      <div class="stage-head">
+        <div class="stage-num">02</div>
+        <div class="stage-name">阶段二 · AI 规模化弹药</div>
+        <div class="stage-tag">AI 提杠杆</div>
+      </div>
+      <div class="bullets">
+        <div class="bullet">
+          <div class="bullet-name">① 食饮品类洞察 SKILL</div>
+          <div class="bullet-desc">双季抓取 + 11 维属性识别 → 数据从「广告域 1 斑」→「<b>小店全量 20162 SKU</b>」</div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-name">② 消费品 AI 拓品 Copilot</div>
+          <div class="bullet-desc">人工 1 周/客 → <b>5 分钟/客</b>，全员销售可批量产出资深策略师级方案，V1.1 产出可定制</div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-name">③ Q3 Calendar SKILL 化（推进中）</div>
+          <div class="bullet-desc">节点话题 + 商品 + 内容 <b>三位一体批量产出</b>，对客对内双向赋能</div>
+        </div>
+      </div>
+      <div class="stage-foot">销售作主驾，AI 作副驾 — 一个人的能力变全员能力</div>
+    </div>
+  </div>
+
+  <!-- Q3 三大业务收口 -->
+  <div class="q3-zone">
+    <div class="q3-head">
+      <div class="q3-tag">🚀 Q3 收口</div>
+      <div class="q3-title">三大业务方向 · IP 节点为大帽子</div>
+      <div class="q3-sub">阶段一 × 阶段二 → 真实业务落地</div>
+    </div>
+    <div class="q3-grid">
+      <div class="q3-card c1">
+        <div class="q3-card-num">01 · 投放端</div>
+        <div class="q3-card-name">小店营销标签外显</div>
+        <div class="q3-card-desc">标签直接驱动<b>客户编创效率</b>提升，反向校准商品力（标签→素材→数据回流）</div>
+        <div class="q3-card-own">承接路径 A · 投放产品对接</div>
+      </div>
+      <div class="q3-card c2">
+        <div class="q3-card-num">02 · 外部拓客</div>
+        <div class="q3-card-name">IP 节点整合拓客</div>
+        <div class="q3-card-desc">以节点 IP 营销为主题，整合<b>商品 × 内容 × 客户</b>三方拓展和提收</div>
+        <div class="q3-card-own">承接路径 B · @vectordeng（邓一维）</div>
+      </div>
+      <div class="q3-card c3">
+        <div class="q3-card-num">03 · 内部策略</div>
+        <div class="q3-card-name">中台优质标签 + 跑出策略</div>
+        <div class="q3-card-desc">推进中台针对优质标签 + 商品资源需求，<b>补齐端午"数据/策略断层"</b>，形成真闭环</div>
+        <div class="q3-card-own">承接路径 A&B · 中台对接</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <span><span class="brand">商品力 · H2 作战图</span> · 食品饮料中心运营组 · 2026.06</span>
+    <span>
+      <a href="https://winglee777.github.io/food-category-insight/" target="_blank">方法论 OnePage ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://winglee777.github.io/product-insight-prompt/" target="_blank">AI Copilot ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://olduncle1983.github.io/Q3-Calendar/" target="_blank">Q3 营销日历 ↗</a>
+    </span>
+  </div>
+
+</div>
+
+</body>
+</html>
