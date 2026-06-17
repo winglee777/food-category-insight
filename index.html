@@ -169,6 +169,101 @@ body{
   padding:1px 4px;border-radius:2px;
 }
 
+/* SCENE · 场景画面（销售拜访 with AI Copilot）*/
+.scene{
+  background:#fff;
+  border:2px solid var(--ink);
+  padding:18px 24px;
+  margin-bottom:18px;
+  position:relative;
+  box-shadow:6px 6px 0 var(--gold);
+}
+.scene-tag{
+  display:inline-block;
+  background:var(--ink);color:#fff;
+  font-family:'Outfit',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.1em;
+  padding:3px 10px;
+  margin-bottom:10px;
+}
+.scene-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:18px;font-weight:900;
+  color:var(--ink);margin:0 0 14px 0;
+  letter-spacing:.02em;
+}
+.scene-cmp{
+  display:grid;
+  grid-template-columns:1fr 36px 1fr;
+  gap:0;align-items:stretch;
+  margin-bottom:12px;
+}
+.scene-col{
+  padding:14px 16px;
+  border:1.5px solid #d4c5a9;
+  background:#fafaf6;
+}
+.scene-col.after{
+  border:2px solid var(--accent);
+  background:var(--accent-bg);
+}
+.scene-col-tag{
+  font-family:'Outfit',sans-serif;
+  font-size:11px;font-weight:700;
+  letter-spacing:.08em;
+  margin-bottom:8px;
+  color:var(--mute);
+  text-transform:uppercase;
+}
+.scene-col.after .scene-col-tag{color:var(--accent)}
+.scene-col ul{
+  list-style:none;padding:0;margin:0 0 10px 0;
+  display:flex;flex-direction:column;gap:5px;
+}
+.scene-col li{
+  font-size:13px;font-weight:600;
+  color:var(--ink);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:4px 0;
+  border-bottom:1px dashed rgba(0,0,0,.08);
+}
+.scene-col li:last-child{border-bottom:none}
+.scene-col li b{color:var(--accent);font-weight:900}
+.scene-col li .cost{
+  font-family:'Outfit',sans-serif;
+  font-size:11px;font-weight:700;
+  color:var(--mute);
+  background:rgba(0,0,0,.04);
+  padding:2px 7px;border-radius:2px;
+  flex-shrink:0;margin-left:8px;
+}
+.scene-col.after li .cost{
+  background:var(--accent);color:#fff;
+}
+.scene-conclude{
+  font-size:12.5px;font-weight:700;
+  color:var(--ink);
+  padding-top:8px;
+  border-top:1.5px solid var(--ink);
+  margin-top:4px;
+}
+.scene-conclude b{color:var(--accent);font-weight:900;font-size:14px}
+.scene-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;
+  font-size:28px;font-weight:900;
+  color:var(--gold);
+}
+.scene-foot{
+  background:var(--gold-bg);
+  border-left:3px solid var(--gold);
+  padding:10px 14px;
+  font-size:12.5px;font-weight:600;
+  line-height:1.7;
+  color:var(--ink);
+}
+.scene-foot b{color:var(--accent);font-weight:900}
+
 /* 双向飞轮 banner */
 .flywheel{
   background:linear-gradient(90deg,#0a0a0a 0%,#3d2b1f 50%,#c2410c 130%);
@@ -719,6 +814,38 @@ body{
   </div>
 </div>
 
+<!-- SCENE · 场景感画面 · 销售拜访 with AI Copilot -->
+<div class="scene">
+  <div class="scene-tag">🎬 一个真实场景</div>
+  <h3 class="scene-title">销售小 W 要去拜访一个食饮商家客户 ——</h3>
+  <div class="scene-cmp">
+    <div class="scene-col before">
+      <div class="scene-col-tag">过去 · 单兵作战</div>
+      <ul>
+        <li>翻爆品榜单 <span class="cost">半天</span></li>
+        <li>想人群洞察 <span class="cost">拍脑袋</span></li>
+        <li>写开品建议 <span class="cost">半天</span></li>
+        <li>配营销话术 <span class="cost">半天</span></li>
+      </ul>
+      <div class="scene-conclude">最快 <b>1 周</b> 才能交付一份资深策略师级方案</div>
+    </div>
+    <div class="scene-arrow">→</div>
+    <div class="scene-col after">
+      <div class="scene-col-tag">现在 · 主驾 + 副驾</div>
+      <ul>
+        <li>销售输入客户基本信息 <span class="cost">30 秒</span></li>
+        <li><b>AI Copilot</b> 产出 8 款 SKU + 3 主线营销 + 话术 <span class="cost">5 分钟</span></li>
+        <li>销售判断 / 调话术 / 敲方案 <span class="cost">主驾决策</span></li>
+      </ul>
+      <div class="scene-conclude"><b>5 分钟</b> 拿到资深级方案，销售保留对客户的判断权</div>
+    </div>
+  </div>
+  <div class="scene-foot">
+    <b>AI 是副驾、销售是主驾</b>——AI 接手数据搜集 / 规则匹配 / 文案生成；销售保留对客户的判断、人设、话术校准。
+    把<b>一个资深运营的开品经验</b>，变成<b>全员销售身边随时能开机的副驾</b>。
+  </div>
+</div>
+
 <!-- THESIS（核心思考·横向）-->
 <div class="thesis">
   <div class="thesis-row">
@@ -852,11 +979,7 @@ body{
 <!-- Footer -->
 <div class="foot">
   <span><span class="brand">食饮赛道洞察体系 · 全业务流 OnePage</span> · 2026.06</span>
-  <span>
-    <a href="apply-1-category-insight.html" target="_blank" style="margin-right:14px">📋 项目 1 申报 ↗</a>
-    <a href="apply-2-qinfendu.html" target="_blank" style="margin-right:14px">📋 项目 2 申报 ↗</a>
-    <a href="https://winglee777.github.io/product-insight-prompt/" target="_blank">提示词工具 ↗</a>
-  </span>
+  <a href="https://winglee777.github.io/product-insight-prompt/" target="_blank">winglee777.github.io/product-insight-prompt ↗</a>
 </div>
 
 </div>
