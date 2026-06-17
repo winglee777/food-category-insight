@@ -264,6 +264,118 @@ body{
 }
 .scene-foot b{color:var(--accent);font-weight:900}
 
+/* BIGSHOT · Before/After 一帧大片（杂志风）*/
+.bigshot{
+  background:linear-gradient(135deg,#1a1a1a 0%,#2d1f15 100%);
+  color:#fff;
+  padding:20px 28px;
+  margin-bottom:18px;
+  position:relative;
+  box-shadow:6px 6px 0 var(--accent);
+  overflow:hidden;
+}
+.bigshot::after{
+  content:'AFTER';
+  position:absolute;right:-12px;bottom:-22px;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:110px;color:rgba(255,255,255,.04);
+  letter-spacing:.02em;line-height:1;
+}
+.bigshot-meta{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:14px;
+  position:relative;z-index:2;
+}
+.bs-tag{
+  background:#ffd966;color:#1a1a1a;
+  font-family:'Outfit',sans-serif;
+  font-size:11px;font-weight:900;letter-spacing:.15em;
+  padding:3px 10px;
+}
+.bs-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:17px;font-weight:900;
+  letter-spacing:.02em;
+}
+.bigshot-cmp{
+  display:grid;
+  grid-template-columns:1fr 50px 1fr;
+  gap:0;align-items:stretch;
+  position:relative;z-index:2;
+  margin-bottom:14px;
+}
+.bs-frame{
+  padding:16px 18px;
+  background:rgba(255,255,255,.04);
+  border:1.5px solid rgba(255,217,102,.2);
+}
+.bs-frame.after{
+  background:rgba(194,65,12,.18);
+  border:2px solid #ffd966;
+}
+.bs-era{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:13px;font-weight:700;
+  color:#ffd966;letter-spacing:.05em;
+  margin-bottom:4px;
+}
+.bs-cast{
+  font-family:'Noto Serif SC',serif;
+  font-size:16px;font-weight:900;
+  margin-bottom:12px;
+  color:#fff;
+  border-bottom:1.5px solid rgba(255,217,102,.3);
+  padding-bottom:8px;
+}
+.bs-frame.after .bs-cast{color:#ffd966;font-size:15px}
+.bs-num{
+  display:flex;flex-direction:column;gap:5px;
+  margin-bottom:10px;
+}
+.bs-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:12px;
+  border-bottom:1px dashed rgba(255,255,255,.1);
+  padding-bottom:4px;
+}
+.bs-row span{
+  color:rgba(255,255,255,.55);
+  font-weight:600;
+}
+.bs-row b{
+  color:#fff;font-weight:900;
+  font-family:'Outfit',sans-serif;
+  font-size:12.5px;
+  letter-spacing:-.01em;
+}
+.bs-frame.after .bs-row b{color:#ffd966}
+.bs-tag-line{
+  margin-top:8px;
+  padding-top:8px;
+  border-top:1.5px solid rgba(255,217,102,.25);
+  font-family:'Noto Serif SC',serif;
+  font-size:12px;font-weight:700;
+  color:rgba(255,255,255,.7);
+  letter-spacing:.03em;
+}
+.bs-frame.after .bs-tag-line{color:#ffd966}
+.bs-vs{
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:24px;font-weight:900;
+  color:#ffd966;
+}
+.bigshot-foot{
+  background:rgba(0,0,0,.3);
+  border-left:3px solid #ffd966;
+  padding:10px 14px;
+  font-size:12.5px;font-weight:600;
+  line-height:1.7;
+  color:rgba(255,255,255,.9);
+  position:relative;z-index:2;
+}
+.bigshot-foot b{color:#ffd966;font-weight:900}
+
 /* 双向飞轮 banner */
 .flywheel{
   background:linear-gradient(90deg,#0a0a0a 0%,#3d2b1f 50%,#c2410c 130%);
@@ -846,6 +958,43 @@ body{
     <b>AI 是副驾、销售是主驾、运营做产品</b>——小 Wing 把<b>一个资深运营的开品经验</b>工程化为 AI Copilot；
     AI 接手数据搜集 / 规则匹配 / 文案生成，销售保留对客户的判断、人设、话术校准。
     一个人的能力，变成<b>全员销售身边随时能开机的副驾</b>。
+  </div>
+</div>
+
+<!-- BIGSHOT · Before/After 一帧大片（小 Wing 主角第二章·军备扩张）-->
+<div class="bigshot">
+  <div class="bigshot-meta">
+    <span class="bs-tag">📷 BEFORE / AFTER</span>
+    <span class="bs-title">小 Wing 的第二章 · 从单兵到军团</span>
+  </div>
+  <div class="bigshot-cmp">
+    <div class="bs-frame before">
+      <div class="bs-era">2025 Q3</div>
+      <div class="bs-cast">小 Wing 一个人</div>
+      <div class="bs-num">
+        <div class="bs-row"><span>客户覆盖</span><b>N = 几十</b></div>
+        <div class="bs-row"><span>交付周期</span><b>1 周 / 客户</b></div>
+        <div class="bs-row"><span>数据视野</span><b>广告域 1 斑</b></div>
+        <div class="bs-row"><span>方法论</span><b>装在脑子里</b></div>
+      </div>
+      <div class="bs-tag-line">⚔ 单兵作战 · 一身武功无处传</div>
+    </div>
+    <div class="bs-vs">VS</div>
+    <div class="bs-frame after">
+      <div class="bs-era">2026 Q2</div>
+      <div class="bs-cast">小 Wing × 50 销售 → 26000 商家</div>
+      <div class="bs-num">
+        <div class="bs-row"><span>客户覆盖</span><b>面状 N = 数百+ · 点状可达 26000</b></div>
+        <div class="bs-row"><span>交付周期</span><b>5 分钟 / 客户（300×）</b></div>
+        <div class="bs-row"><span>数据视野</span><b>视频号小店全量 20162 SKU</b></div>
+        <div class="bs-row"><span>方法论</span><b>固化为 SKILL · 50 人 fork</b></div>
+      </div>
+      <div class="bs-tag-line">⚡ 军团作战 · 一人武功全员开机</div>
+    </div>
+  </div>
+  <div class="bigshot-foot">
+    🔑 关键跃迁：<b>从「为单个客户人工开品（做完即弃）」到「工程化批量为全行业客户开品（5 分钟/次、可复用）」</b>——
+    AI 不是替代小 Wing，是把<b>小 Wing 的开品经验工程化为全员销售随时能开机的副驾</b>。
   </div>
 </div>
 
