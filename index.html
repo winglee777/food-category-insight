@@ -293,6 +293,70 @@ body{
 }
 .bigshot-foot b{color:#ffd966;font-weight:900}
 
+/* STORY FLOW · 3 段式叙事 */
+.story-flow{
+  display:flex;flex-direction:column;gap:6px;
+  position:relative;z-index:2;
+  margin-bottom:14px;
+}
+.story-step{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 18px;
+  background:rgba(255,255,255,.04);
+  border:1.5px solid rgba(255,217,102,.2);
+  border-left:4px solid rgba(255,217,102,.5);
+}
+.story-step.bottleneck{
+  background:rgba(180,40,30,.15);
+  border-left-color:#ff6b5b;
+}
+.story-step.breakthrough{
+  background:rgba(194,65,12,.18);
+  border:2px solid #ffd966;
+  border-left:4px solid #ffd966;
+}
+.story-step-num{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:32px;font-weight:900;
+  color:#ffd966;line-height:1;
+  flex-shrink:0;
+  min-width:36px;
+}
+.story-step.bottleneck .story-step-num{color:#ff6b5b}
+.story-step-body{flex:1}
+.story-step-ti{
+  font-family:'Noto Serif SC',serif;
+  font-size:15px;font-weight:900;
+  color:#fff;
+  margin-bottom:6px;
+  letter-spacing:.02em;
+}
+.story-step.breakthrough .story-step-ti{color:#ffd966}
+.story-step-dd{
+  font-size:12.5px;font-weight:600;
+  color:rgba(255,255,255,.85);
+  line-height:1.65;
+}
+.story-step-dd b{color:#ffd966;font-weight:900}
+.story-step.bottleneck .story-step-dd b{color:#ff8b7a}
+.story-step-extra{
+  margin-top:8px;padding-top:8px;
+  border-top:1.5px dashed rgba(255,217,102,.3);
+  font-size:12px;font-weight:600;
+  color:rgba(255,255,255,.75);
+  line-height:1.6;
+}
+.story-step-extra b{color:#ffd966;font-weight:900}
+.story-arrow{
+  text-align:center;
+  font-family:'Fraunces',serif;
+  font-size:22px;font-weight:900;
+  color:#ffd966;
+  line-height:1;
+  padding:2px 0;
+  position:relative;z-index:2;
+}
+
 /* 双向飞轮 banner */
 .flywheel{
   background:linear-gradient(90deg,#0a0a0a 0%,#3d2b1f 50%,#c2410c 130%);
@@ -843,60 +907,45 @@ body{
   </div>
 </div>
 
-<!-- BIGSHOT · 小 Wing 的开品故事（单客户细节 + 覆盖规模 双层 BEFORE/AFTER 一帧整合）-->
+<!-- BIGSHOT · 小 Wing 的成长故事（3 段叙事·真本事 → 撞天花板 → AI 突破带宽）-->
 <div class="bigshot">
   <div class="bigshot-meta">
-    <span class="bs-tag">📷 BEFORE / AFTER</span>
-    <span class="bs-title">小 Wing 的开品故事 · 从一个人到一支军团</span>
+    <span class="bs-tag">📷 小 Wing 的故事</span>
+    <span class="bs-title">从「单点真本事」到「跨中心可复用」</span>
   </div>
-  <div class="bigshot-cmp">
-    <div class="bs-frame before">
-      <div class="bs-era">2025 Q3</div>
-      <div class="bs-cast">小 Wing 一个人</div>
-
-      <div class="bs-section-tag">🎯 单客户交付（以虎坚果为例）</div>
-      <div class="bs-num">
-        <div class="bs-row"><span>翻爆品榜单</span><b>半天</b></div>
-        <div class="bs-row"><span>想人群洞察</span><b>拍脑袋</b></div>
-        <div class="bs-row"><span>写建议 + 配话术</span><b>1 天</b></div>
-        <div class="bs-row"><span>交付周期</span><b>1 周 / 客户</b></div>
+  <div class="story-flow">
+    <div class="story-step">
+      <div class="story-step-num">①</div>
+      <div class="story-step-body">
+        <div class="story-step-ti">先用真本事打出单点解决方案</div>
+        <div class="story-step-dd">3 份品类报告 + 虎坚果 / 红盒子客户开品方案——<b>方法论被验证有效</b></div>
       </div>
-
-      <div class="bs-section-tag">🌐 覆盖规模</div>
-      <div class="bs-num">
-        <div class="bs-row"><span>客户覆盖</span><b>N = 几十</b></div>
-        <div class="bs-row"><span>数据视野</span><b>广告域 1 斑</b></div>
-        <div class="bs-row"><span>方法论</span><b>装在脑子里 · 做完即弃</b></div>
-      </div>
-
-      <div class="bs-tag-line">⚔ 单兵作战 · 一身武功无处传</div>
     </div>
-    <div class="bs-vs">VS</div>
-    <div class="bs-frame after">
-      <div class="bs-era">2026 Q2</div>
-      <div class="bs-cast">小 Wing × 50 销售 → 26000 商家</div>
-
-      <div class="bs-section-tag">🎯 单客户交付（销售主驾 + AI 副驾）</div>
-      <div class="bs-num">
-        <div class="bs-row"><span>销售输入客户信息</span><b>30 秒</b></div>
-        <div class="bs-row"><span>AI Copilot 产出方案</span><b>5 分钟</b></div>
-        <div class="bs-row"><span>销售判断/调话术/敲方案</span><b>主驾决策</b></div>
-        <div class="bs-row"><span>本案例输出</span><b>8 款 SKU+3 主线 → <a href="case-shamo-tigernut.html" target="_blank" style="color:#ffd966;text-decoration:underline">虎坚果案例 ↗</a></b></div>
+    <div class="story-arrow">↓</div>
+    <div class="story-step bottleneck">
+      <div class="story-step-num">②</div>
+      <div class="story-step-body">
+        <div class="story-step-ti">但一个人撞到带宽天花板</div>
+        <div class="story-step-dd">食饮中心 <b>26000 个 ADQ 商家</b>，1 周/客 = 全年只能服务几十个 → <b>单兵带宽根本不够</b></div>
       </div>
-
-      <div class="bs-section-tag">🌐 覆盖规模</div>
-      <div class="bs-num">
-        <div class="bs-row"><span>客户覆盖</span><b>面状 N = 数百+ / 点状可达 26000</b></div>
-        <div class="bs-row"><span>数据视野</span><b>视频号全量 20162 SKU</b></div>
-        <div class="bs-row"><span>方法论</span><b>SKILL 化 · 50 人 fork</b></div>
+    </div>
+    <div class="story-arrow">↓</div>
+    <div class="story-step breakthrough">
+      <div class="story-step-num">③</div>
+      <div class="story-step-body">
+        <div class="story-step-ti">把自己逼成「做产品的运营」· 借 AI 突破带宽</div>
+        <div class="story-step-dd">把单点经验工程化为 SKILL + AI Copilot + 在线工具 → <b>食饮一中心 50 人 fork（77%）· 5 分钟产出资深级方案</b></div>
+        <div class="story-step-extra">
+          🌐 不只赋能我自己的赛道，还能<b>横向复用到消电 / 日百 / 服饰美妆</b>三个中心——
+          <a href="https://winglee777.github.io/product-insight-prompt/" target="_blank" style="color:#ffd966;text-decoration:underline">在线工具 ↗</a>
+        </div>
       </div>
-
-      <div class="bs-tag-line">⚡ 军团作战 · 一人武功全员开机</div>
     </div>
   </div>
   <div class="bigshot-foot">
-    🔑 <b>AI 是副驾、销售是主驾、运营做产品</b>——AI 接手数据搜集/规则匹配/文案生成，销售保留对客户的判断、人设、话术校准。
-    把<b>小 Wing 的开品经验工程化为全员销售随时能开机的副驾</b>：一个人的能力，变成 50 销售可服务 26000 商家的军团能力。
+    🔑 <b>AI 给运营的真正价值</b>，不是替代我做运营，而是让我有机会
+    <b>把自己从「看赛道的运营」逼成「做产品的运营」</b>——
+    把一个人的能力，工程化为全员可复用的弹药，再横向复制到整个商品消费部。
   </div>
 </div>
 
