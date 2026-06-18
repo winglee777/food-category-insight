@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>商品力 · 行业 ↔ 中台 双向奔赴</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,700&family=Noto+Serif+SC:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Noto Serif SC','PingFang SC',serif;
+    background:#f5efe6;
+    padding:48px 24px;
+    color:#1a1a1a;
+    line-height:1.5;
+  }
+  .canvas{
+    max-width:1100px;margin:0 auto;
+    background:#fff;
+    padding:36px 44px 40px;
+    border:2px solid #1a1a1a;
+    box-shadow:8px 8px 0 #c2410c;
+    position:relative;
+    overflow:hidden;
+  }
+  .canvas::before{
+    content:'';position:absolute;top:0;left:0;right:0;
+    height:6px;
+    background:linear-gradient(90deg,#1d4ed8 0%,#c2410c 50%,#15803d 100%);
+  }
+  .canvas::after{
+    content:'STRATEGY';
+    position:absolute;right:-22px;bottom:-30px;
+    font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+    font-size:120px;color:rgba(0,0,0,.04);
+    letter-spacing:-.02em;line-height:1;
+    pointer-events:none;
+  }
+
+  .head{margin-bottom:18px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .head-tag{
+    background:#1a1a1a;color:#fff;
+    font-family:'Outfit',sans-serif;
+    font-size:11px;font-weight:900;letter-spacing:.18em;
+    padding:4px 12px;
+  }
+  .head-ti{
+    font-family:'Noto Serif SC',serif;
+    font-size:24px;font-weight:900;
+    letter-spacing:.02em;
+  }
+  .head-sub{
+    color:#666;font-size:13px;font-weight:600;
+    margin-left:auto;
+    font-family:'Outfit',sans-serif;letter-spacing:.05em;
+  }
+
+  /* 北极星 */
+  .pole{
+    text-align:center;
+    background:#1a1a1a;
+    color:#fff;
+    padding:16px 24px;
+    margin-bottom:14px;
+    position:relative;z-index:2;
+  }
+  .pole-eyebrow{
+    font-family:'Outfit',sans-serif;
+    font-size:10.5px;font-weight:900;
+    letter-spacing:.2em;
+    color:#ffd966;
+    margin-bottom:6px;
+  }
+  .pole-ti{
+    font-family:'Noto Serif SC',serif;
+    font-size:20px;font-weight:900;
+    letter-spacing:.04em;
+  }
+  .pole-sub{
+    font-size:12.5px;font-weight:600;
+    color:rgba(255,255,255,.78);
+    margin-top:5px;
+    letter-spacing:.02em;
+  }
+  .pole-sub b{color:#ffd966}
+
+  /* 连线 */
+  .arrow-down{
+    text-align:center;
+    font-family:'Fraunces',serif;
+    font-size:24px;font-weight:900;
+    color:#c2410c;
+    line-height:1;
+    padding:6px 0;
+  }
+  .arrow-up{
+    text-align:center;
+    font-family:'Fraunces',serif;
+    font-size:24px;font-weight:900;
+    color:#1d4ed8;
+    line-height:1;
+    padding:6px 0;
+  }
+
+  /* 行业上面做 */
+  .layer{
+    border:2px solid #1a1a1a;
+    padding:18px 22px;
+    background:#fff;
+    margin-bottom:6px;
+  }
+  .layer-hd{
+    display:flex;align-items:baseline;gap:10px;
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:1.5px dashed #1a1a1a;
+  }
+  .layer-tag{
+    font-family:'Outfit',sans-serif;
+    font-size:11px;font-weight:900;
+    letter-spacing:.15em;
+    background:#1d4ed8;color:#fff;
+    padding:3px 10px;
+  }
+  .layer.bottom .layer-tag{background:#c2410c}
+  .layer-ti{
+    font-family:'Noto Serif SC',serif;
+    font-size:16px;font-weight:900;
+  }
+  .layer-eyebrow{
+    margin-left:auto;
+    font-size:12px;color:#666;font-weight:600;
+    font-style:italic;
+  }
+
+  /* 行业双路径 */
+  .paths{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .path{
+    border:1.5px solid #1d4ed8;
+    background:linear-gradient(180deg,rgba(29,78,216,.06) 0%,rgba(29,78,216,.02) 100%);
+    padding:14px 16px;
+    position:relative;
+  }
+  .path-letter{
+    position:absolute;top:10px;right:14px;
+    font-family:'Fraunces',serif;font-style:italic;
+    font-size:42px;font-weight:900;
+    color:rgba(29,78,216,.12);
+    line-height:1;
+    pointer-events:none;
+  }
+  .path-ti{
+    font-family:'Noto Serif SC',serif;
+    font-size:15px;font-weight:900;
+    color:#1d4ed8;
+    margin-bottom:4px;
+  }
+  .path-tag{
+    font-size:11.5px;font-weight:700;
+    color:#666;
+    margin-bottom:9px;
+    letter-spacing:.02em;
+  }
+  .path-bullet{
+    font-size:12.5px;font-weight:600;
+    color:#1a1a1a;
+    line-height:1.7;
+  }
+  .path-bullet b{color:#1d4ed8;font-weight:900}
+
+  /* 中台策略 */
+  .mid-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:12px;
+  }
+  .mid-card{
+    border:1.5px solid #c2410c;
+    background:linear-gradient(180deg,rgba(194,65,12,.06) 0%,rgba(194,65,12,.02) 100%);
+    padding:12px 14px;
+    position:relative;
+  }
+  .mid-card::before{
+    content:attr(data-num);
+    position:absolute;top:8px;right:12px;
+    font-family:'Fraunces',serif;font-style:italic;
+    font-size:22px;font-weight:900;
+    color:rgba(194,65,12,.18);
+    line-height:1;
+  }
+  .mid-card-ti{
+    font-family:'Noto Serif SC',serif;
+    font-size:13.5px;font-weight:900;
+    color:#c2410c;
+    margin-bottom:5px;
+    padding-right:24px;
+  }
+  .mid-card-dd{
+    font-size:11.5px;font-weight:600;
+    color:#444;
+    line-height:1.6;
+  }
+
+  /* 双向奔赴 banner */
+  .both-way{
+    background:linear-gradient(90deg,#1d4ed8 0%,#1a1a1a 50%,#c2410c 100%);
+    color:#fff;
+    text-align:center;
+    padding:11px 14px;
+    margin:0;
+    font-family:'Noto Serif SC',serif;
+    font-size:14px;font-weight:900;
+    letter-spacing:.05em;
+    position:relative;z-index:2;
+  }
+  .both-way b{
+    color:#ffd966;
+    font-style:italic;
+    font-family:'Fraunces',serif;
+  }
+
+  .footnote{
+    margin-top:16px;padding-top:12px;
+    border-top:2px solid #1a1a1a;
+    font-size:11.5px;color:#666;font-weight:600;
+    line-height:1.7;
+    font-family:'Outfit',sans-serif;letter-spacing:.02em;
+  }
+  .footnote b{color:#1a1a1a}
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <div class="head">
+    <span class="head-tag">商品力 · 月会汇报</span>
+    <span class="head-ti">行业供给 ↔ 中台策略 · 双向奔赴</span>
+    <span class="head-sub">FOOD · CONSUMER GOODS · H2 2026</span>
+  </div>
+
+  <!-- 北极星 -->
+  <div class="pole">
+    <div class="pole-eyebrow">★ NORTH STAR · 北极星指标</div>
+    <div class="pole-ti">跑出率（出单商品数 / 总在投商品数）</div>
+    <div class="pole-sub">关键认知：供给数量 ≠ 有效供给——<b>"有效供给"才是跑出率的核心解</b></div>
+  </div>
+
+  <div class="arrow-down">↑</div>
+
+  <!-- 行业上面做 -->
+  <div class="layer top">
+    <div class="layer-hd">
+      <span class="layer-tag">LAYER 01 · 行业</span>
+      <span class="layer-ti">提升「有效供给」的两条业务路径</span>
+      <span class="layer-eyebrow">行业已发力 · Q2 已落地</span>
+    </div>
+    <div class="paths">
+      <div class="path">
+        <div class="path-letter">A</div>
+        <div class="path-ti">A · 测出爆品</div>
+        <div class="path-tag">提效率 · 在已有商品里快速选出值得放大的品</div>
+        <div class="path-bullet">
+          全店托管 / 低预算测评 → AI 自动跑出潜力品 → <b>后置资源放大</b>
+        </div>
+      </div>
+      <div class="path">
+        <div class="path-letter">B</div>
+        <div class="path-ti">B · 选准爆品</div>
+        <div class="path-tag">提确定性 · 基于确定性方向投入特定品并打爆</div>
+        <div class="path-bullet">
+          品类数据洞察 → 锁定方向 + 定制开品 → <b>选准方向打透吃透</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 双向奔赴 banner -->
+  <div class="both-way">
+    ↕ <b>行业指哪 · 中台打哪</b> ↕
+  </div>
+
+  <!-- 中台下面做 -->
+  <div class="layer bottom">
+    <div class="layer-hd">
+      <span class="layer-tag">LAYER 02 · 中台</span>
+      <span class="layer-ti">识别行业打磨出的优质供给，给策略扶持</span>
+      <span class="layer-eyebrow">Q3 正向提需 · 协同推进</span>
+    </div>
+    <div class="mid-cards">
+      <div class="mid-card" data-num="01">
+        <div class="mid-card-ti">优质标签 CPV 基建</div>
+        <div class="mid-card-dd">后端建设地理标 / 老字号 / 应季 / 明星 IP 同款等优质商品标签体系</div>
+      </div>
+      <div class="mid-card" data-num="02">
+        <div class="mid-card-ti">标签外显投放端</div>
+        <div class="mid-card-dd">标签外显到投放端，提升客户编创效率与确定性</div>
+      </div>
+      <div class="mid-card" data-num="03">
+        <div class="mid-card-ti">融入推荐策略</div>
+        <div class="mid-card-dd">优质供给在推荐策略上获得加权，让"行业筛出来的好品"被精准放大</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footnote">
+    <b>核心叙事</b>：行业从供给端打磨「有效供给」，中台从策略端识别并扶持「行业打磨出的优质供给」——
+    上下两层相互奔赴，共同抬升食饮中心的<b>跑出率</b>北极星指标。
+  </div>
+
+</div>
+</body>
+</html>
