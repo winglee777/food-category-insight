@@ -2,259 +2,266 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>投放力 · 散点信息 → 完整工作流</title>
+<title>投放力 · 散点信息 → 体系化工作流</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,700&family=Noto+Serif+SC:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,700&family=Noto+Serif+SC:wght@400;500;700;900&family=Outfit:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     font-family:'Noto Serif SC','PingFang SC',serif;
-    background:#f5efe6;
+    background:#fafaf7;
     padding:48px 24px;
     color:#1a1a1a;
-    line-height:1.5;
+    line-height:1.55;
   }
   .canvas{
-    max-width:1100px;margin:0 auto;
+    max-width:980px;margin:0 auto;
     background:#fff;
-    padding:36px 44px 40px;
-    border:2px solid #1a1a1a;
-    box-shadow:8px 8px 0 #15803d;
+    padding:42px 48px 38px;
     position:relative;
-    overflow:hidden;
-  }
-  .canvas::before{
-    content:'';position:absolute;top:0;left:0;right:0;
-    height:6px;
-    background:linear-gradient(90deg,#dc2626 0%,#1a1a1a 50%,#15803d 100%);
-  }
-  .canvas::after{
-    content:'WORKFLOW';
-    position:absolute;right:-22px;bottom:-30px;
-    font-family:'Fraunces',serif;font-style:italic;font-weight:900;
-    font-size:120px;color:rgba(0,0,0,.04);
-    letter-spacing:-.02em;line-height:1;
-    pointer-events:none;
   }
 
-  .head{margin-bottom:18px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  /* HEAD */
+  .head{
+    margin-bottom:28px;
+    padding-bottom:14px;
+    border-bottom:1px solid #e8e2d6;
+    display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  }
   .head-tag{
-    background:#1a1a1a;color:#fff;
     font-family:'Outfit',sans-serif;
-    font-size:11px;font-weight:900;letter-spacing:.18em;
-    padding:4px 12px;
+    font-size:10.5px;font-weight:800;letter-spacing:.2em;
+    color:#15803d;
+    background:#ecfdf5;
+    padding:3px 10px;
+    border-radius:2px;
   }
   .head-ti{
     font-family:'Noto Serif SC',serif;
-    font-size:24px;font-weight:900;
+    font-size:22px;font-weight:900;
     letter-spacing:.02em;
+    color:#1a1a1a;
   }
   .head-sub{
-    color:#666;font-size:13px;font-weight:600;
+    color:#9a9a9a;font-size:11.5px;font-weight:600;
     margin-left:auto;
-    font-family:'Outfit',sans-serif;letter-spacing:.05em;
+    font-family:'Outfit',sans-serif;letter-spacing:.08em;
   }
 
-  /* 核心命题 */
-  .core{
-    background:#1a1a1a;color:#fff;
-    padding:14px 20px;
-    margin-bottom:18px;
+  /* TRIANGLE · 房顶（核心逻辑） */
+  .roof-wrap{text-align:center;margin-bottom:0}
+  .triangle{
+    width:0;height:0;
+    border-left:170px solid transparent;
+    border-right:170px solid transparent;
+    border-bottom:100px solid #1a1a1a;
+    margin:0 auto;
+    position:relative;
+  }
+  .triangle-inner{
+    position:absolute;
+    top:38px;left:-130px;
+    width:260px;
     text-align:center;
   }
-  .core-eyebrow{
+  .triangle-eyebrow{
     font-family:'Outfit',sans-serif;
-    font-size:10.5px;font-weight:900;
-    letter-spacing:.2em;color:#86efac;
-    margin-bottom:6px;
+    font-size:9.5px;font-weight:900;
+    letter-spacing:.22em;
+    color:#86efac;
+    margin-bottom:4px;
   }
-  .core-ti{
+  .triangle-ti{
     font-family:'Noto Serif SC',serif;
-    font-size:17px;font-weight:900;
+    font-size:14px;font-weight:900;
+    color:#fff;
     letter-spacing:.02em;
+    line-height:1.35;
   }
-  .core-ti b{color:#86efac}
+  .triangle-ti b{color:#86efac}
 
-  /* BEFORE / AFTER 对照 */
+  /* BODY · 房身 */
+  .body-wrap{
+    border:2px solid #1a1a1a;
+    border-top:none;
+    background:#fff;
+  }
+
+  /* COMPARE · 左右对照 */
   .compare{
     display:grid;
-    grid-template-columns:1fr 80px 1.4fr;
-    gap:0;
+    grid-template-columns:1fr 60px 1.15fr;
     align-items:stretch;
-    margin-bottom:18px;
   }
 
-  /* BEFORE */
-  .before{
-    background:#fbe6e6;
-    border:2px solid #dc2626;
-    padding:18px 20px;
-    position:relative;
+  /* 左：散点信息（已有但散） */
+  .left{
+    padding:18px 20px 16px;
+    background:linear-gradient(180deg,#fef2f2 0%,#fff 100%);
+    border-right:1px solid #fecaca;
   }
-  .before::before{
-    content:'BEFORE';
-    position:absolute;top:14px;right:18px;
-    font-family:'Fraunces',serif;font-style:italic;
-    font-size:42px;font-weight:900;
-    color:rgba(220,38,38,.16);
-    line-height:1;
-    pointer-events:none;
-  }
-  .b-eyebrow{
-    font-family:'Outfit',sans-serif;
-    font-size:11px;font-weight:900;
-    letter-spacing:.2em;color:#dc2626;
-    margin-bottom:8px;
-  }
-  .b-ti{
-    font-family:'Noto Serif SC',serif;
-    font-size:15px;font-weight:900;
-    color:#1a1a1a;
+  .left-hd{
+    display:flex;align-items:baseline;gap:10px;
     margin-bottom:12px;
   }
-  .b-bullets{
-    list-style:none;
-    display:flex;flex-direction:column;gap:6px;
+  .left-tag{
+    font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:900;
+    letter-spacing:.16em;
+    color:#dc2626;background:#fee2e2;border:1px solid #fca5a5;
+    padding:3px 9px;
+    border-radius:2px;
   }
-  .b-bullets li{
-    font-size:12.5px;font-weight:600;
+  .left-ti{
+    font-family:'Noto Serif SC',serif;
+    font-size:14.5px;font-weight:900;
     color:#1a1a1a;
-    padding:5px 0 5px 18px;
-    border-bottom:1px dashed rgba(220,38,38,.3);
+  }
+  .left-sub{
+    font-size:11.5px;color:#7a7a7a;font-weight:600;
+    margin-bottom:10px;
+    font-style:italic;
+    font-family:'Fraunces',serif;
+    line-height:1.5;
+  }
+  .scatter-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+  .scatter{
+    background:#fff;
+    border:1px solid #fecaca;
+    padding:7px 10px;
+    border-radius:2px;
+    font-size:11px;font-weight:600;
+    color:#1a1a1a;
+    line-height:1.45;
     position:relative;
   }
-  .b-bullets li:last-child{border-bottom:none}
-  .b-bullets li::before{
-    content:'×';
-    position:absolute;left:2px;top:5px;
-    color:#dc2626;font-weight:900;
-    font-family:'Outfit',sans-serif;
+  .scatter b{color:#dc2626;font-weight:900;display:block;font-size:11.5px;margin-bottom:2px}
+  .scatter-note{
+    margin-top:10px;
+    padding:8px 11px;
+    background:#fff;
+    border:1.5px dashed #dc2626;
+    font-size:11.5px;font-weight:700;
+    color:#dc2626;
+    line-height:1.55;
+    border-radius:2px;
   }
-  .b-bullets li b{color:#dc2626;font-weight:900}
 
   /* 中间转换 */
   .transform{
     display:flex;align-items:center;justify-content:center;
     flex-direction:column;
-    background:#1a1a1a;
-    color:#fff;
-    padding:0 8px;
+    background:#fafaf7;
+    border-left:1px solid #e8e2d6;
+    border-right:1px solid #e8e2d6;
   }
   .transform-arrow{
     font-family:'Fraunces',serif;font-style:italic;
-    font-size:32px;font-weight:900;
-    color:#86efac;
+    font-size:30px;font-weight:900;
+    color:#15803d;
     line-height:1;
   }
   .transform-text{
     font-family:'Outfit',sans-serif;
     font-size:9.5px;font-weight:900;
     letter-spacing:.18em;
-    color:#86efac;
+    color:#1a1a1a;
     margin-top:6px;
     writing-mode:vertical-rl;
   }
 
-  /* AFTER */
-  .after{
-    background:#dcfce7;
-    border:2px solid #15803d;
-    padding:18px 20px;
-    position:relative;
+  /* 右：体系化工作流 */
+  .right{
+    padding:18px 20px 16px;
+    background:linear-gradient(180deg,#ecfdf5 0%,#fff 100%);
   }
-  .after::before{
-    content:'AFTER';
-    position:absolute;top:14px;right:18px;
-    font-family:'Fraunces',serif;font-style:italic;
-    font-size:42px;font-weight:900;
-    color:rgba(21,128,61,.18);
-    line-height:1;
-    pointer-events:none;
-  }
-  .a-eyebrow{
-    font-family:'Outfit',sans-serif;
-    font-size:11px;font-weight:900;
-    letter-spacing:.2em;color:#15803d;
-    margin-bottom:8px;
-  }
-  .a-ti{
-    font-family:'Noto Serif SC',serif;
-    font-size:15px;font-weight:900;
-    color:#1a1a1a;
+  .right-hd{
+    display:flex;align-items:baseline;gap:10px;
     margin-bottom:12px;
   }
-
-  /* AFTER 双层 */
-  .a-layers{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-  .a-layer{
-    background:#fff;
-    border:1.5px solid #15803d;
-    padding:11px 12px;
-    position:relative;
-  }
-  .a-layer-tag{
+  .right-tag{
     font-family:'Outfit',sans-serif;
     font-size:10px;font-weight:900;
-    letter-spacing:.15em;
-    color:#15803d;
-    margin-bottom:5px;
+    letter-spacing:.16em;
+    color:#15803d;background:#dcfce7;border:1px solid #86efac;
+    padding:3px 9px;
+    border-radius:2px;
   }
-  .a-layer-ti{
+  .right-ti{
     font-family:'Noto Serif SC',serif;
-    font-size:13.5px;font-weight:900;
+    font-size:14.5px;font-weight:900;
     color:#1a1a1a;
-    margin-bottom:5px;
   }
-  .a-layer-dd{
-    font-size:11.5px;font-weight:600;
-    color:#444;
-    line-height:1.6;
+  .right-sub{
+    font-size:11.5px;color:#7a7a7a;font-weight:600;
+    margin-bottom:10px;
+    font-style:italic;
+    font-family:'Fraunces',serif;
+    line-height:1.5;
   }
-  .a-layer-dd b{color:#15803d;font-weight:900}
-
-  .a-conclude{
+  .flow-steps{
+    display:flex;flex-direction:column;gap:7px;
+  }
+  .flow-step{
+    background:#fff;
+    border:1.5px solid #86efac;
+    padding:9px 12px;
+    border-radius:2px;
+    display:flex;align-items:flex-start;gap:10px;
+  }
+  .flow-step-num{
+    font-family:'Fraunces',serif;font-style:italic;
+    font-size:18px;font-weight:900;
+    color:#15803d;
+    line-height:1;
+    flex-shrink:0;
+    min-width:18px;
+  }
+  .flow-step-body{flex:1}
+  .flow-step-ti{
+    font-family:'Noto Serif SC',serif;
+    font-size:13px;font-weight:900;
+    color:#15803d;
+    margin-bottom:2px;
+  }
+  .flow-step-dd{
+    font-size:11px;font-weight:600;
+    color:#1a1a1a;
+    line-height:1.55;
+  }
+  .flow-step-dd b{color:#15803d;font-weight:900}
+  .flow-arrow{
+    text-align:center;
+    color:#15803d;
+    font-size:13px;
+    line-height:1;
+    margin:-2px 0;
+  }
+  .flow-conclude{
     margin-top:10px;
-    padding:8px 10px;
+    padding:8px 11px;
     background:#15803d;
     color:#fff;
-    font-size:12px;font-weight:700;
+    font-size:11.5px;font-weight:700;
     text-align:center;
-    letter-spacing:.03em;
+    letter-spacing:.02em;
+    border-radius:2px;
   }
-  .a-conclude b{color:#fef08a;font-weight:900}
+  .flow-conclude b{color:#fef08a;font-weight:900}
 
-  /* Q3 提需 */
-  .q3{
-    background:linear-gradient(90deg,#15803d 0%,#1a1a1a 100%);
-    color:#fff;
-    padding:14px 20px;
-    margin-bottom:0;
-    display:flex;align-items:center;gap:14px;
-  }
-  .q3-tag{
-    background:#fef08a;color:#1a1a1a;
-    font-family:'Outfit',sans-serif;
-    font-size:11px;font-weight:900;letter-spacing:.15em;
-    padding:4px 10px;
-    flex-shrink:0;
-  }
-  .q3-text{
-    font-size:13px;font-weight:600;
-    line-height:1.6;
-  }
-  .q3-text b{color:#fef08a;font-weight:900}
-
+  /* FOOTNOTE */
   .footnote{
-    margin-top:16px;padding-top:12px;
-    border-top:2px solid #1a1a1a;
-    font-size:11.5px;color:#666;font-weight:600;
+    margin-top:18px;padding:12px 16px;
+    background:#fafaf7;
+    border-left:3px solid #1a1a1a;
+    font-size:11.5px;color:#5a5a5a;font-weight:600;
     line-height:1.7;
-    font-family:'Outfit',sans-serif;letter-spacing:.02em;
+    letter-spacing:.01em;
   }
-  .footnote b{color:#1a1a1a}
+  .footnote b{color:#1a1a1a;font-weight:900}
 </style>
 </head>
 <body>
@@ -262,65 +269,96 @@
 
   <div class="head">
     <span class="head-tag">投放力 · 月会汇报</span>
-    <span class="head-ti">从「散点信息」到「完整工作流」</span>
-    <span class="head-sub">FOOD · CONSUMER GOODS · H2 2026</span>
+    <span class="head-ti">从「散点信息」到「体系化工作流」</span>
+    <span class="head-sub">FOOD · H2 2026</span>
   </div>
 
-  <!-- 核心命题 -->
-  <div class="core">
-    <div class="core-eyebrow">▸ CORE INSIGHT · 核心判断</div>
-    <div class="core-ti">行业的瓶颈不是缺工具，而是<b>缺让客户能用起来的工作流</b></div>
-  </div>
-
-  <!-- BEFORE / AFTER -->
-  <div class="compare">
-    <div class="before">
-      <div class="b-eyebrow">BEFORE · 散点</div>
-      <div class="b-ti">单点信息 · 单点沟通</div>
-      <ul class="b-bullets">
-        <li>ADQ 工具体系点状又复杂（竞价 / 智投 / 全域通 / 小店广告 / CID / 场景感知…）</li>
-        <li>销售跟客户单点沟通——这次讲智投、下次讲全域通——<b>客户接不住</b></li>
-        <li>人工拉数复盘 4-5h，<b>错过 618 等节点窗口</b></li>
-        <li>口头催完，客户做没做、效果如何<b>追踪不到</b></li>
-      </ul>
-    </div>
-    <div class="transform">
-      <div class="transform-arrow">→</div>
-      <div class="transform-text">WORKFLOW UPGRADE</div>
-    </div>
-    <div class="after">
-      <div class="a-eyebrow">AFTER · 完整工作流</div>
-      <div class="a-ti">面状打底 + 点状深耕</div>
-      <div class="a-layers">
-        <div class="a-layer">
-          <div class="a-layer-tag">面状·课程</div>
-          <div class="a-layer-ti">基础共识</div>
-          <div class="a-layer-dd">视频号投放课程对外发行 → <b>全员先具备投放基础认知</b></div>
-        </div>
-        <div class="a-layer">
-          <div class="a-layer-tag">点状·诊追</div>
-          <div class="a-layer-ti">定制弹药</div>
-          <div class="a-layer-dd">勤奋度诊追 SKILL（L1/L2/L3 量化 + 自动追踪）→ <b>针对单客户量化 + 闭环</b></div>
-        </div>
-      </div>
-      <div class="a-conclude">
-        面状 + 点状 = <b>客户能真正用起来的完整工作流</b>
+  <!-- ROOF · 三角房顶（核心判断） -->
+  <div class="roof-wrap">
+    <div class="triangle">
+      <div class="triangle-inner">
+        <div class="triangle-eyebrow">★ CORE INSIGHT</div>
+        <div class="triangle-ti">不缺能力<br>缺<b>体系化工作流</b></div>
       </div>
     </div>
   </div>
 
-  <!-- Q3 提需 -->
-  <div class="q3">
-    <span class="q3-tag">Q3 · 协同推进</span>
-    <span class="q3-text">
-      工具内部好用、商家也买单——Q3 进一步放大杠杆，<b>把诊追工具直接做到面向客户的工作台</b>，
-      从"运营帮商家诊断"升级为"商家自助诊追"，需要联动 ADQClaw / 经营平台共建。
-    </span>
+  <!-- BODY · 房身 -->
+  <div class="body-wrap">
+
+    <!-- COMPARE -->
+    <div class="compare">
+
+      <!-- 左：散点 -->
+      <div class="left">
+        <div class="left-hd">
+          <span class="left-tag">散点信息</span>
+          <span class="left-ti">能力很多 · 但不体系</span>
+        </div>
+        <div class="left-sub">每隔一段时间出一个新能力／新政策，客户接收的是一系列散点</div>
+        <div class="scatter-grid">
+          <div class="scatter"><b>智投新能力</b>每月迭代</div>
+          <div class="scatter"><b>小店广告</b>+扶持政策</div>
+          <div class="scatter"><b>SOP 文档</b>多份并行</div>
+          <div class="scatter"><b>618 全资补贴</b>海报推送</div>
+          <div class="scatter"><b>巡查名单</b>Excel 督促</div>
+          <div class="scatter"><b>群消息</b>单点沟通</div>
+        </div>
+        <div class="scatter-note">
+          客户收到的是一系列 OnePager + 链接 + 名单——抓不住、记不住、用不起来
+        </div>
+      </div>
+
+      <!-- 中间转换 -->
+      <div class="transform">
+        <div class="transform-arrow">→</div>
+        <div class="transform-text">SYSTEMIZE</div>
+      </div>
+
+      <!-- 右：体系化 -->
+      <div class="right">
+        <div class="right-hd">
+          <span class="right-tag">体系化工作流</span>
+          <span class="right-ti">从理解 → 应用 → 监控</span>
+        </div>
+        <div class="right-sub">把散点能力串成客户能用得起来的完整工作流</div>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-step-num">①</div>
+            <div class="flow-step-body">
+              <div class="flow-step-ti">理解 · 面状课程打底</div>
+              <div class="flow-step-dd">视频号投放课程对外发行 → <b>全员先具备投放基础认知</b></div>
+            </div>
+          </div>
+          <div class="flow-arrow">▾</div>
+          <div class="flow-step">
+            <div class="flow-step-num">②</div>
+            <div class="flow-step-body">
+              <div class="flow-step-ti">应用 · 点状诊追定制</div>
+              <div class="flow-step-dd">勤奋度诊追 SKILL（L1/L2/L3 量化）→ <b>针对单客户量化诊断 + 行动清单</b></div>
+            </div>
+          </div>
+          <div class="flow-arrow">▾</div>
+          <div class="flow-step">
+            <div class="flow-step-num">③</div>
+            <div class="flow-step-body">
+              <div class="flow-step-ti">监控 · 自动追踪闭环</div>
+              <div class="flow-step-dd">企微连推 3 期追踪日报 → <b>诊断不是终点，落地才是</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="flow-conclude">
+          <b>理解 → 应用 → 监控</b> 全链路被客户用起来
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <div class="footnote">
-    <b>核心叙事</b>：投放力的关键不是再做更多工具，而是把已有工具串成<b>客户用得起来的工作流</b>——
-    面状课程拉齐共识、点状诊追定制弹药，Q3 把这套工作流推到客户工作台，让能力真正被规模化使用。
+    <b>核心叙事</b>：行业不缺投放能力——智投、小店广告、扶持政策、SOP 都已具备，但客户接收的是一系列散点信息。
+    Q3 投放力的关键是把已有能力串成<b>客户能用得起来的体系化工作流</b>：理解→应用→监控全链路闭环。
   </div>
 
 </div>

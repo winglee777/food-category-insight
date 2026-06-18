@@ -4,232 +4,249 @@
 <meta charset="UTF-8">
 <title>商品力 · 行业 ↔ 中台 双向奔赴</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,700&family=Noto+Serif+SC:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,700&family=Noto+Serif+SC:wght@400;500;700;900&family=Outfit:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     font-family:'Noto Serif SC','PingFang SC',serif;
-    background:#f5efe6;
+    background:#fafaf7;
     padding:48px 24px;
     color:#1a1a1a;
-    line-height:1.5;
+    line-height:1.55;
   }
   .canvas{
-    max-width:1100px;margin:0 auto;
+    max-width:980px;margin:0 auto;
     background:#fff;
-    padding:36px 44px 40px;
-    border:2px solid #1a1a1a;
-    box-shadow:8px 8px 0 #c2410c;
+    padding:42px 48px 38px;
     position:relative;
-    overflow:hidden;
-  }
-  .canvas::before{
-    content:'';position:absolute;top:0;left:0;right:0;
-    height:6px;
-    background:linear-gradient(90deg,#1d4ed8 0%,#c2410c 50%,#15803d 100%);
-  }
-  .canvas::after{
-    content:'STRATEGY';
-    position:absolute;right:-22px;bottom:-30px;
-    font-family:'Fraunces',serif;font-style:italic;font-weight:900;
-    font-size:120px;color:rgba(0,0,0,.04);
-    letter-spacing:-.02em;line-height:1;
-    pointer-events:none;
   }
 
-  .head{margin-bottom:18px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  /* HEAD */
+  .head{
+    margin-bottom:28px;
+    padding-bottom:14px;
+    border-bottom:1px solid #e8e2d6;
+    display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  }
   .head-tag{
-    background:#1a1a1a;color:#fff;
     font-family:'Outfit',sans-serif;
-    font-size:11px;font-weight:900;letter-spacing:.18em;
-    padding:4px 12px;
+    font-size:10.5px;font-weight:800;letter-spacing:.2em;
+    color:#1d4ed8;
+    background:#eff4ff;
+    padding:3px 10px;
+    border-radius:2px;
   }
   .head-ti{
     font-family:'Noto Serif SC',serif;
-    font-size:24px;font-weight:900;
+    font-size:22px;font-weight:900;
     letter-spacing:.02em;
+    color:#1a1a1a;
   }
   .head-sub{
-    color:#666;font-size:13px;font-weight:600;
+    color:#9a9a9a;font-size:11.5px;font-weight:600;
     margin-left:auto;
-    font-family:'Outfit',sans-serif;letter-spacing:.05em;
+    font-family:'Outfit',sans-serif;letter-spacing:.08em;
   }
 
-  /* 北极星 */
-  .pole{
+  /* TRIANGLE · 房顶（核心逻辑） */
+  .roof-wrap{
     text-align:center;
-    background:#1a1a1a;
-    color:#fff;
-    padding:16px 24px;
-    margin-bottom:14px;
-    position:relative;z-index:2;
+    margin-bottom:0;
+    position:relative;
   }
-  .pole-eyebrow{
+  .triangle{
+    width:0;height:0;
+    border-left:140px solid transparent;
+    border-right:140px solid transparent;
+    border-bottom:100px solid #1a1a1a;
+    margin:0 auto;
+    position:relative;
+  }
+  .triangle-inner{
+    position:absolute;
+    top:38px;left:-100px;
+    width:200px;
+    text-align:center;
+  }
+  .triangle-eyebrow{
     font-family:'Outfit',sans-serif;
-    font-size:10.5px;font-weight:900;
-    letter-spacing:.2em;
+    font-size:9.5px;font-weight:900;
+    letter-spacing:.22em;
     color:#ffd966;
-    margin-bottom:6px;
+    margin-bottom:4px;
   }
-  .pole-ti{
+  .triangle-ti{
     font-family:'Noto Serif SC',serif;
-    font-size:20px;font-weight:900;
-    letter-spacing:.04em;
-  }
-  .pole-sub{
-    font-size:12.5px;font-weight:600;
-    color:rgba(255,255,255,.78);
-    margin-top:5px;
+    font-size:15px;font-weight:900;
+    color:#fff;
     letter-spacing:.02em;
   }
-  .pole-sub b{color:#ffd966}
-
-  /* 连线 */
-  .arrow-down{
-    text-align:center;
-    font-family:'Fraunces',serif;
-    font-size:24px;font-weight:900;
-    color:#c2410c;
-    line-height:1;
-    padding:6px 0;
+  .triangle-sub{
+    font-size:10.5px;font-weight:600;
+    color:rgba(255,255,255,.78);
+    margin-top:2px;
+    letter-spacing:.02em;
   }
-  .arrow-up{
-    text-align:center;
-    font-family:'Fraunces',serif;
-    font-size:24px;font-weight:900;
-    color:#1d4ed8;
-    line-height:1;
-    padding:6px 0;
-  }
+  .triangle-sub b{color:#ffd966;font-weight:900}
 
-  /* 行业上面做 */
-  .layer{
+  /* BODY · 房身 */
+  .body-wrap{
     border:2px solid #1a1a1a;
-    padding:18px 22px;
+    border-top:none;
     background:#fff;
-    margin-bottom:6px;
+  }
+
+  /* LAYER · 上下两层 */
+  .layer{
+    padding:18px 22px 16px;
+    background:#fff;
+  }
+  .layer.top{
+    border-bottom:none;
+    background:linear-gradient(180deg,#f5f8ff 0%,#fff 100%);
+  }
+  .layer.bottom{
+    background:linear-gradient(180deg,#fff 0%,#fef7ef 100%);
   }
   .layer-hd{
     display:flex;align-items:baseline;gap:10px;
-    margin-bottom:14px;
-    padding-bottom:10px;
-    border-bottom:1.5px dashed #1a1a1a;
+    margin-bottom:12px;
   }
   .layer-tag{
     font-family:'Outfit',sans-serif;
-    font-size:11px;font-weight:900;
-    letter-spacing:.15em;
-    background:#1d4ed8;color:#fff;
-    padding:3px 10px;
+    font-size:10px;font-weight:900;
+    letter-spacing:.16em;
+    padding:3px 9px;
+    border-radius:2px;
   }
-  .layer.bottom .layer-tag{background:#c2410c}
+  .layer.top .layer-tag{
+    color:#1d4ed8;background:#eff4ff;border:1px solid #c7d8ff;
+  }
+  .layer.bottom .layer-tag{
+    color:#c2410c;background:#fef3e7;border:1px solid #fcd0a8;
+  }
   .layer-ti{
     font-family:'Noto Serif SC',serif;
-    font-size:16px;font-weight:900;
+    font-size:14.5px;font-weight:900;
+    color:#1a1a1a;
   }
   .layer-eyebrow{
     margin-left:auto;
-    font-size:12px;color:#666;font-weight:600;
+    font-size:11px;color:#9a9a9a;font-weight:600;
     font-style:italic;
+    font-family:'Fraunces',serif;
   }
 
-  /* 行业双路径 */
+  /* PATHS · A/B */
   .paths{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:14px;
+    gap:12px;
   }
   .path{
-    border:1.5px solid #1d4ed8;
-    background:linear-gradient(180deg,rgba(29,78,216,.06) 0%,rgba(29,78,216,.02) 100%);
-    padding:14px 16px;
+    border:1.5px solid #c7d8ff;
+    background:#fff;
+    padding:13px 15px;
     position:relative;
+    border-radius:3px;
   }
   .path-letter{
-    position:absolute;top:10px;right:14px;
+    position:absolute;top:8px;right:13px;
     font-family:'Fraunces',serif;font-style:italic;
-    font-size:42px;font-weight:900;
-    color:rgba(29,78,216,.12);
+    font-size:34px;font-weight:900;
+    color:rgba(29,78,216,.1);
     line-height:1;
     pointer-events:none;
   }
   .path-ti{
     font-family:'Noto Serif SC',serif;
-    font-size:15px;font-weight:900;
+    font-size:14px;font-weight:900;
     color:#1d4ed8;
-    margin-bottom:4px;
+    margin-bottom:3px;
   }
   .path-tag{
-    font-size:11.5px;font-weight:700;
-    color:#666;
-    margin-bottom:9px;
-    letter-spacing:.02em;
+    font-size:11px;font-weight:600;
+    color:#7a7a7a;
+    margin-bottom:8px;
+    letter-spacing:.01em;
   }
   .path-bullet{
-    font-size:12.5px;font-weight:600;
+    font-size:12px;font-weight:600;
     color:#1a1a1a;
-    line-height:1.7;
+    line-height:1.65;
   }
   .path-bullet b{color:#1d4ed8;font-weight:900}
 
-  /* 中台策略 */
+  /* DOUBLE-ARROW · 双向箭头（中间·呼吸感）*/
+  .double-arrow{
+    display:flex;align-items:center;justify-content:center;
+    gap:10px;
+    padding:14px 0;
+    background:#fafaf7;
+    border-top:1px solid #e8e2d6;
+    border-bottom:1px solid #e8e2d6;
+    position:relative;
+  }
+  .arrow-up,.arrow-down{
+    font-family:'Fraunces',serif;
+    font-size:22px;font-weight:900;
+    line-height:1;
+  }
+  .arrow-up{color:#1d4ed8}
+  .arrow-down{color:#c2410c}
+  .double-arrow-text{
+    font-family:'Outfit',sans-serif;
+    font-size:10.5px;font-weight:900;
+    letter-spacing:.2em;
+    color:#1a1a1a;
+    padding:0 16px;
+    border-left:1px solid #c7c7c7;
+    border-right:1px solid #c7c7c7;
+  }
+
+  /* MID CARDS · 中台三件事 */
   .mid-cards{
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
     gap:12px;
   }
   .mid-card{
-    border:1.5px solid #c2410c;
-    background:linear-gradient(180deg,rgba(194,65,12,.06) 0%,rgba(194,65,12,.02) 100%);
+    border:1.5px solid #fcd0a8;
+    background:#fff;
     padding:12px 14px;
     position:relative;
+    border-radius:3px;
   }
   .mid-card::before{
     content:attr(data-num);
-    position:absolute;top:8px;right:12px;
+    position:absolute;top:6px;right:11px;
     font-family:'Fraunces',serif;font-style:italic;
-    font-size:22px;font-weight:900;
+    font-size:18px;font-weight:900;
     color:rgba(194,65,12,.18);
     line-height:1;
   }
   .mid-card-ti{
     font-family:'Noto Serif SC',serif;
-    font-size:13.5px;font-weight:900;
+    font-size:13px;font-weight:900;
     color:#c2410c;
-    margin-bottom:5px;
-    padding-right:24px;
+    margin-bottom:4px;
+    padding-right:18px;
   }
   .mid-card-dd{
-    font-size:11.5px;font-weight:600;
+    font-size:11px;font-weight:600;
     color:#444;
     line-height:1.6;
   }
 
-  /* 双向奔赴 banner */
-  .both-way{
-    background:linear-gradient(90deg,#1d4ed8 0%,#1a1a1a 50%,#c2410c 100%);
-    color:#fff;
-    text-align:center;
-    padding:11px 14px;
-    margin:0;
-    font-family:'Noto Serif SC',serif;
-    font-size:14px;font-weight:900;
-    letter-spacing:.05em;
-    position:relative;z-index:2;
-  }
-  .both-way b{
-    color:#ffd966;
-    font-style:italic;
-    font-family:'Fraunces',serif;
-  }
-
+  /* FOOTNOTE */
   .footnote{
-    margin-top:16px;padding-top:12px;
-    border-top:2px solid #1a1a1a;
-    font-size:11.5px;color:#666;font-weight:600;
+    margin-top:18px;padding:12px 16px;
+    background:#fafaf7;
+    border-left:3px solid #1a1a1a;
+    font-size:11.5px;color:#5a5a5a;font-weight:600;
     line-height:1.7;
-    font-family:'Outfit',sans-serif;letter-spacing:.02em;
+    letter-spacing:.01em;
   }
-  .footnote b{color:#1a1a1a}
+  .footnote b{color:#1a1a1a;font-weight:900}
 </style>
 </head>
 <body>
@@ -238,71 +255,80 @@
   <div class="head">
     <span class="head-tag">商品力 · 月会汇报</span>
     <span class="head-ti">行业供给 ↔ 中台策略 · 双向奔赴</span>
-    <span class="head-sub">FOOD · CONSUMER GOODS · H2 2026</span>
+    <span class="head-sub">FOOD · H2 2026</span>
   </div>
 
-  <!-- 北极星 -->
-  <div class="pole">
-    <div class="pole-eyebrow">★ NORTH STAR · 北极星指标</div>
-    <div class="pole-ti">跑出率（出单商品数 / 总在投商品数）</div>
-    <div class="pole-sub">关键认知：供给数量 ≠ 有效供给——<b>"有效供给"才是跑出率的核心解</b></div>
-  </div>
-
-  <div class="arrow-down">↑</div>
-
-  <!-- 行业上面做 -->
-  <div class="layer top">
-    <div class="layer-hd">
-      <span class="layer-tag">LAYER 01 · 行业</span>
-      <span class="layer-ti">提升「有效供给」的两条业务路径</span>
-      <span class="layer-eyebrow">行业已发力 · Q2 已落地</span>
+  <!-- ROOF · 三角房顶 -->
+  <div class="roof-wrap">
+    <div class="triangle">
+      <div class="triangle-inner">
+        <div class="triangle-eyebrow">★ NORTH STAR</div>
+        <div class="triangle-ti">跑 出 率</div>
+        <div class="triangle-sub">有效供给 > <b>数量供给</b></div>
+      </div>
     </div>
-    <div class="paths">
-      <div class="path">
-        <div class="path-letter">A</div>
-        <div class="path-ti">A · 测出爆品</div>
-        <div class="path-tag">提效率 · 在已有商品里快速选出值得放大的品</div>
-        <div class="path-bullet">
-          全店托管 / 低预算测评 → AI 自动跑出潜力品 → <b>后置资源放大</b>
+  </div>
+
+  <!-- BODY · 房身 -->
+  <div class="body-wrap">
+
+    <!-- 行业上面做 -->
+    <div class="layer top">
+      <div class="layer-hd">
+        <span class="layer-tag">LAYER 01 · 行业</span>
+        <span class="layer-ti">提升「有效供给」的两条业务路径</span>
+        <span class="layer-eyebrow">Q2 已落地</span>
+      </div>
+      <div class="paths">
+        <div class="path">
+          <div class="path-letter">A</div>
+          <div class="path-ti">A · 测出爆品</div>
+          <div class="path-tag">提效率 · 在已有商品里快速选出值得放大的品</div>
+          <div class="path-bullet">
+            全店托管 / 低预算测评 → AI 自动跑出潜力品 → <b>后置资源放大</b>
+          </div>
+        </div>
+        <div class="path">
+          <div class="path-letter">B</div>
+          <div class="path-ti">B · 选准爆品</div>
+          <div class="path-tag">提确定性 · 基于确定性方向投入特定品并打爆</div>
+          <div class="path-bullet">
+            品类数据洞察 → 锁定方向 + 定制开品 → <b>选准方向打透吃透</b>
+          </div>
         </div>
       </div>
-      <div class="path">
-        <div class="path-letter">B</div>
-        <div class="path-ti">B · 选准爆品</div>
-        <div class="path-tag">提确定性 · 基于确定性方向投入特定品并打爆</div>
-        <div class="path-bullet">
-          品类数据洞察 → 锁定方向 + 定制开品 → <b>选准方向打透吃透</b>
+    </div>
+
+    <!-- 双向箭头 · 中间衔接 -->
+    <div class="double-arrow">
+      <span class="arrow-up">▲</span>
+      <span class="double-arrow-text">双向奔赴</span>
+      <span class="arrow-down">▼</span>
+    </div>
+
+    <!-- 中台下面做 -->
+    <div class="layer bottom">
+      <div class="layer-hd">
+        <span class="layer-tag">LAYER 02 · 中台</span>
+        <span class="layer-ti">识别行业打磨出的优质供给，给策略扶持</span>
+        <span class="layer-eyebrow">Q3 协同推进</span>
+      </div>
+      <div class="mid-cards">
+        <div class="mid-card" data-num="01">
+          <div class="mid-card-ti">优质标签 CPV 基建</div>
+          <div class="mid-card-dd">后端建设地理标 / 老字号 / 应季 / 明星 IP 同款等优质商品标签体系</div>
+        </div>
+        <div class="mid-card" data-num="02">
+          <div class="mid-card-ti">标签外显投放端</div>
+          <div class="mid-card-dd">标签外显到投放端，提升客户编创效率与确定性</div>
+        </div>
+        <div class="mid-card" data-num="03">
+          <div class="mid-card-ti">融入推荐策略</div>
+          <div class="mid-card-dd">优质供给在推荐策略上获得加权，让"行业筛出来的好品"被精准放大</div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 双向奔赴 banner -->
-  <div class="both-way">
-    ↕ <b>行业指哪 · 中台打哪</b> ↕
-  </div>
-
-  <!-- 中台下面做 -->
-  <div class="layer bottom">
-    <div class="layer-hd">
-      <span class="layer-tag">LAYER 02 · 中台</span>
-      <span class="layer-ti">识别行业打磨出的优质供给，给策略扶持</span>
-      <span class="layer-eyebrow">Q3 正向提需 · 协同推进</span>
-    </div>
-    <div class="mid-cards">
-      <div class="mid-card" data-num="01">
-        <div class="mid-card-ti">优质标签 CPV 基建</div>
-        <div class="mid-card-dd">后端建设地理标 / 老字号 / 应季 / 明星 IP 同款等优质商品标签体系</div>
-      </div>
-      <div class="mid-card" data-num="02">
-        <div class="mid-card-ti">标签外显投放端</div>
-        <div class="mid-card-dd">标签外显到投放端，提升客户编创效率与确定性</div>
-      </div>
-      <div class="mid-card" data-num="03">
-        <div class="mid-card-ti">融入推荐策略</div>
-        <div class="mid-card-dd">优质供给在推荐策略上获得加权，让"行业筛出来的好品"被精准放大</div>
-      </div>
-    </div>
   </div>
 
   <div class="footnote">
